@@ -11,6 +11,7 @@ const SingleProduct = () => {
   const brandName = location.state?.brandName;
 
   const [productData, setProductData] = useState([]);
+  console.log(process.env.REACT_APP_Backend_URL, process.env.REACT_APP_Backend_PORT)
   useEffect(() => {
 
     async function fetchData() {
