@@ -1,0 +1,115 @@
+
+
+@media only screen and (max-width: 999px) {
+    .dslr_brand_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fbfbfb;
+        margin: 40px auto;
+        padding: auto;
+
+
+    }
+
+    .dslr_brand_section .content-heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .dslr_brand_section .content-heading p{
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: auto;
+    }
+
+    .dslr_brand_section .MyGallery {
+        
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dslr_brand_section .MyGallery .brandName {
+        width: auto;
+        height: auto;
+        display: flex;
+       
+    }
+
+    .dslr_brand_section .MyGallery .brandName img {
+        height: 120px;
+        width: auto;
+        border: 2px solid #f1f1f1;
+        border-radius: 8px;
+        margin: 15px;
+        padding: auto;
+
+    }
+    .dslr_brand_section .MyGallery .brandName img:hover { transform: scale(1.1);
+        transition: transform 0.5s;
+        border: 2px solid rgba(240, 238, 236, 0.2);
+        ;
+        border-radius: 8px;
+  }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .dslr_brand_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fbfbfb;
+        margin: 40px auto;
+        padding: 10px 5px 40px 10px;
+
+
+    }
+
+    .dslr_brand_section .content-heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .dslr_brand_section .content-heading p{
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: auto;
+    }
+
+    .dslr_brand_section .MyGallery {
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dslr_brand_section .MyGallery .brandName {
+        width: auto;
+        height: auto;
+       
+    }
+
+    .dslr_brand_section .MyGallery .brandName img {
+        height: 120px;
+        width: auto;
+        border: 2px solid #f1f1f1;
+        border-radius: 8px;
+        margin: 13px;
+    }
+
+    .dslr_brand_section .MyGallery .brandName img:hover { transform: scale(1.1);
+          transition: transform 0.5s;
+          border: 2px solid rgba(240, 238, 236, 0.2);
+          ;
+          border-radius: 8px;
+    }
+}
