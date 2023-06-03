@@ -1,6 +1,6 @@
 
 
-@media only screen and (max-width: 999px) {
+@media (min-width: 400px) and (max-width: 999px) {
     .dslr_brand_section {
         display: flex;
         flex-direction: column;
