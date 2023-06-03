@@ -21,10 +21,6 @@ const VideoHero = () => {
       <source src={require("./videoHero.mp4")} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    {/* <div className="hero-content">
-      <h1>Hero section title</h1>
-      <p>Hero section description</p>
-    </div> */}
   </div>
   );
 };
