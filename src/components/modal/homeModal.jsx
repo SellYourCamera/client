@@ -74,12 +74,12 @@ const Modal = ({ setIsModalOpen }) => {
             user_name: username,
             user_email: email,
             phone: phone,
-            cameraBrand: brand
+            brand: brand
 
         };
         console.log(userDataToSend)
         try {
-            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/userCallRequest`, username,email,phone,brand, {
+            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/userCallRequest`, userDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 }
