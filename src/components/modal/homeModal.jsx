@@ -42,6 +42,7 @@ const Modal = ({ setIsModalOpen }) => {
     const [brand, setBrand] = useState('');
 
     console.log(email, username, phone, brand);
+    var emailSendStatus;
 
 
     //handle form submit
@@ -58,6 +59,7 @@ const Modal = ({ setIsModalOpen }) => {
         }, 'Xr7TiVGL2mxbnjbe7')
             .then((result) => {
                 console.log('Email sent successfully', result.text);
+                emailSendStatus=200;
                 //     <Stack sx={{ width: '100%' }} spacing={2}>
                 //   <Alert 
                 //   severity="success">Call Request Send You Get Confirmation Mail and We Will connect you soon.</Alert>   
@@ -77,27 +79,26 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
 
         };
-        console.log(userDataToSend)
+        console.log(userDataToSend);
+        console.log(process.env.REACT_APP_Backend_URL,process.env.REACT_APP_Backend_PORT)
+
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/userCallRequest`, userDataToSend, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                }
             });
             console.log(apiResponse);
         } catch (error) {
             console.log(error);
         }
-
+        console.log(emailSend,emailSendStatus,apiResponse);
 
         //check data send or not
 
-        if (apiResponse && emailSend) {
-            alert("Data send Successfully")
-        }
-        else {
-            alert("data not send")
-        }
+        if (apiResponse && emailSendStatus === 200 && apiResponse.status === 200) {
+            alert("Data sent successfully");
+          } else {
+            alert("Data not sent");
+          }
+          
 
     };
 

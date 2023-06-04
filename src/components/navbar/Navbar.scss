@@ -1,269 +1,91 @@
-// .navbar {
-//    display: flex;
-//     height: 90px;
-//     border-bottom: rgba(240, 238, 236, 0.2) solid 2px;
-//     background-color:  rgba(240, 238, 236, 0.2);;
-  
-//     .wrapper {
-//       padding: 10px 50px;
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-between;
-      
-  
-      
-  
-//       .left {
-       
-//         display: flex;
-//         align-items: center;
-//         gap: 30px;
-       
-//         text-decoration: none;
+.navbar {
+height: fit-content;
+padding: 10px 30px;
+align-items: center;
+justify-content: center;
+  border-bottom: rgba(240, 238, 236, 0.5) solid 2px;
+  background-color: rgba(240, 238, 236, 0.5);
 
-//         .item {
-//           display: flex;
-//           align-items: center;
-//           position: relative;
-//           font-size: 18px;
-          
-//           a{
-//             color: #454343;
-//             &:hover{
-//               color:#2879fe;
-//             }
-//             &:active{
-//               color:#2879fe;
-//             }
-
-//           }
-//         }
-       
-//       }
-//       .center {
-        
-//         font-size: 30px;
-//         letter-spacing: 2px;
-        
-//         margin-left: -70px;
-//         margin-top: 10px;
-//         img{
-//           height: 50px;
-//           max-height: 60px;
-//           width: auto;
-//         }
-//       }
-//       .right {
-       
-//         display: flex;
-//         align-items: center;
-//         gap: 30px;
-        
-  
-//         .icons {
-//           display: flex;
-//           gap: 15px;
-//           color: #777;
-//           cursor: pointer;
-  
-//           .cartIcon {
-//             position: relative;
-  
-//             span {
-//               font-size: 12px;
-//               width: 20px;
-//               height: 20px;
-//               border-radius: 50%;
-//               background-color: #2879fe;
-//               color: white;
-//               position: absolute;
-//               right: -10px;
-//               top: -10px;
-//               display: flex;
-//               align-items: center;
-//               justify-content: center;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-
-// // Mobile Navbar
-// @media only screen and (max-width: 575.98px) {
-//   .navbar-mobile {
-//     height: auto;
-//     background-color: rgba(240, 238, 236, 0.2);
-//     border-bottom: rgba(240, 238, 236, 0.2) solid 2px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 10px;
-
-//     .wrapper {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//     }
-
-//     .left {
-//       display: flex;
-//       align-items: center;
-
-//       .toggle-btn {
-//         background-color: transparent;
-//         border: none;
-//         cursor: pointer;
-//       }
-
-//       .menu {
-//         display: none;
-//         padding: 10px;
-//         background-color: #f0eeec;
-//         position: absolute;
-//         top: 100%;
-//         right: 0;
-//         width: 100%;
-//       }
-//     }
-
-//     .center {
-//       margin-left: 0;
-//       margin-top: 0;
-//       text-align: left;
-
-//       img {
-//         height: 40px;
-//         max-height: 50px;
-//       }
-//     }
-
-//     &.menu-opened {
-//       .menu {
-//         display: block;
-//       }
-//     }
-//   }
-// }
-  
-  
+  .wrapper {
+    padding: 20px 50px ;
+    display: flex;
+    flex-direction: row;
 
 
-
-
-// Mobile Navbar
-.navbar-mobile {
-  display: none; // Hide by default on desktop and tablet screens
-
-  @media only screen and (max-width: 767.98px) {
-    display: flex; // Show on mobile screens
-    height: auto;
-    background-color: rgba(240, 238, 236, 0.2);
-    border-bottom: rgba(240, 238, 236, 0.2) solid 2px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-
-    .wrapper {
+    .center {
+      width: 30%;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      margin: auto;
+
+      img {
+        height: auto;
+        width: 25%;
+      }
     }
 
     .left {
+      width: 35%;
       display: flex;
       align-items: center;
+      gap: 30px;
+      text-decoration: none;
 
-      .toggle-btn {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      .menu {
-        display: none;
-        padding: 10px;
-        background-color: #f0eeec;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-      }
-    }
-
-    .center {
-      margin-left: 0;
-      margin-top: 0;
-      text-align: left;
-
-      img {
-        height: 40px;
-        max-height: 50px;
-      }
-    }
-
-    &.menu-opened {
-      .menu {
-        display: block;
-      }
-    }
-  }
-}
-
-// Desktop and Tablet Navbar
-.navbar {
-  display: flex; // Show by default on desktop and tablet screens
-  height: 90px;
-  border-bottom: rgba(240, 238, 236, 0.2) solid 2px;
-  background-color: rgba(240, 238, 236, 0.2);
-
-  .wrapper {
-    padding: 10px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .center {
-    font-size: 30px;
-    letter-spacing: 2px;
-    margin-left: -70px;
-    margin-top: 10px;
-
-    img {
-      height: 50px;
-      max-height: 60px;
-      width: auto;
-    }
-  }
-
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-    .icons {
-      display: flex;
-      gap: 15px;
-      color: #777;
-      cursor: pointer;
-
-      .cartIcon {
+      .item {
+        display: flex;
+        align-items: center;
         position: relative;
+        font-size: 22px;
 
-        span {
-          font-size: 12px;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background-color: #2879fe;
-          color: white;
-          position: absolute;
-          right: -10px;
-          top: -10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        a {
+          color: #454343;
+          text-decoration: none;
+
+          &:hover {
+            color: #2879fe;
+          }
+
+          &:active {
+            color: #2879fe;
+          }
+
+        }
+      }
+
+    }
+
+    .right {
+      width: 35%;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 8px;
+      margin-right:-30px;
+
+
+      .icons {
+        display: flex;
+        gap: 25px;
+        color: #777;
+        cursor: pointer;
+
+        .cartIcon {
+          position: relative;
+
+          span {
+            font-size: 12px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #2879fe;
+            color: white;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
     }
