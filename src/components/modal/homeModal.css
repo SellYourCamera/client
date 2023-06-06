@@ -35,7 +35,6 @@
         transition: transform 0.3s ease-out;
         max-height: fit-content;
         height: auto;
-        min-height: fit-content;
         overflow-y: scroll;
         display: flex;
         justify-content: center;
