@@ -1,5 +1,7 @@
 @media only screen and (min-width:998px){
   .footer {
+    padding: 20px;
+    border-top: 1px solid rgb(105, 105, 105,0.9);
     margin: 100px 200px 20px 200px;
     hr{
         margin: 30px 0px -20px 0px;
@@ -66,10 +68,11 @@
 @media only screen and (max-width: 997.9px) {
 
   .footer {
+    border-top: 1px solid rgb(105, 105, 105,0.9);
     margin:auto;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     hr{
         margin: 30px 0px -20px 0px;
         color: rgb(105, 105, 105);

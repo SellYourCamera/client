@@ -1,29 +1,20 @@
-.sellcontainer{
 
-    margin: 30px;
-    padding: 30px;
 
-    .sellimg{
-        display: flex;
-        align-items: center;
-        margin: 5px;
-
-        p{
-            display: inline;
-        }
-    }
-}
-.row {
-
+@media only screen and (max-width: 767.98px)
+{
+  .sell-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     //border: 1 solid red;
     margin: 20px 60px;
     padding: 10px;
     
   
   .col {
-    width: 50%;
+    width: 100%;
+    img{
+      width: 100%;
+    }
    
     .heading
     {
@@ -32,37 +23,37 @@
         font-size: 30px;
         font-weight: 400;
         text-align: center;
-
-
+        margin: 20px 0px;
+  
+  
     }
     
     /* Resize images */
     
     .item{
        // border: 1px solid red;
-        height: 100px;
-        width: 80px;
-        padding: 15px;
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
-        margin: 32px;
-        
-        width: 19%;
+        align-items: center;
+        position:inherit;
+        width: 100%;
+        margin: 25px 0px;
+      
         img {
             --s: 15px;  /* size of the frame */
             --b: 2px;   /* border thickness */
-            --w: 100px; /* width of the image */
-            --c: #555;
+            --w: 150px; /* width of the image */
+            --c: #1876d2;
             
             width: var(--w);
             aspect-ratio: 1;
             object-fit: cover;
-            padding: calc(2*var(--s));
-            --_g: var(--c) var(--b),rgba(248, 248, 248, 0) 0 calc(100% - var(--b)),var(--c) 0;
+             //padding: calc(0.5*var(--s));
+            --_g: var(--c) var(--b),#1876d2 0 calc(100% - var(--b)),var(--c) 0;
             background:
               linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
               linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
-            outline: calc(var(--w)/2) solid rgba(85, 85, 85, 0.076);
+            outline: calc(var(--w)/2) solid rgba(85, 85, 85, 0.06);
             outline-offset: calc(var(--w)/-2 - 2*var(--s));
             transition: .4s;
             cursor: pointer;
@@ -72,17 +63,226 @@
             outline-offset: calc(var(--s)/-2);
             --_i: calc(100% - 2*var(--s));
           }
-
+  
         p{
             //border: 1px solid red;
-            padding-left:50px ;
-            text-align: center;
             
-            color: #555;
-
+            text-align: center;  
+            color: #555;  
+            text-decoration: none;
            
-            
         }
     }
   }
+  }
+
 }
+
+  @media (min-width:768px) and (max-width: 1000px){
+
+    .sellcontainer{
+
+      margin: 30px;
+      padding: 30px;
+    
+      .sellimg{
+          display: flex;
+          align-items: center;
+          margin: 5px;
+    
+          p{
+              display: inline;
+          }
+      }
+    }
+    .sell-row {
+    
+      display: flex;
+      flex-direction: row;
+      //border: 1 solid red;
+      margin: 20px 60px;
+      padding: 10px;
+      
+    
+    .col {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      img{
+        width: 100%;
+       
+       
+      }
+     
+     
+      .heading
+      {
+         // border: 1px solid red;
+          color: #555;
+          font-size: 30px;
+          font-weight: 400;
+          text-align: center;
+    
+    
+      }
+      
+      /* Resize images */
+      
+      .item{
+         // border: 1px solid red;
+          height: 100px;
+          width: 80px;
+          padding: 15px;
+          display: inline-flex;
+          flex-direction: column;
+          margin: 32px;
+          
+          width: 19%;
+          img {
+
+            margin-top: 20px;
+              --s: 15px;  /* size of the frame */
+              --b: 2px;   /* border thickness */
+              --w: 150px; /* width of the image */
+              --c: #1876d2;
+              
+              width: var(--w);
+              aspect-ratio: 1;
+              object-fit: cover;
+              // padding: calc(0.5*var(--s));
+              --_g: var(--c) var(--b),rgba(248, 248, 248, 0) 0 calc(100% - var(--b)),var(--c) 0;
+              background:
+                linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+                linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+              outline: calc(var(--w)/2) solid rgba(85, 85, 85, 0.076);
+              outline-offset: calc(var(--w)/-2 - 2*var(--s));
+              transition: .4s;
+              cursor: pointer;
+            }
+            img:hover {
+              outline: var(--b) solid var(--c);
+              outline-offset: calc(var(--s)/-2);
+              --_i: calc(100% - 2*var(--s));
+            }
+    
+          p{
+              //border: 1px solid red;
+              padding-left:50px ;
+              text-align: center;
+              color: #555;
+    
+             
+              
+          }
+      }
+    }
+    }
+  } 
+
+  @media only screen and (min-width:1000.1px){
+    .sellcontainer{
+
+      margin: 30px;
+      padding: 30px;
+    
+      .sellimg{
+          display: flex;
+          align-items: center;
+          margin: 5px;
+    
+          p{
+              display: inline;
+          }
+      }
+    }
+    .sell-row {
+    
+      display: flex;
+      flex-direction: row;
+      //border: 1 solid red;
+      margin: 20px 60px;
+      padding: 10px;
+      
+    
+    .col {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      img{
+        width: 100%;
+       
+       
+      }
+     
+     
+      .heading
+      {
+         // border: 1px solid red;
+          color: #555;
+          font-size: 30px;
+          font-weight: 400;
+          text-align: center;
+          margin-left: 70px;
+    
+    
+      }
+      
+      /* Resize images */
+      .parent-item{
+      display: inline-flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-left: 50px;
+     
+      .item{
+         // border: 1px solid red;
+          height: 100px;
+          width: 80px;
+          padding: 15px;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 32px;
+          width: 100%;
+          img {
+
+            margin-top: 20px;
+              --s: 15px;  /* size of the frame */
+              --b: 2px;   /* border thickness */
+              --w: 150px; /* width of the image */
+              --c: #1876d2;
+              
+              width: var(--w);
+              aspect-ratio: 1;
+              object-fit: cover;
+              // padding: calc(0.5*var(--s));
+              --_g: var(--c) var(--b),rgba(248, 248, 248, 0) 0 calc(100% - var(--b)),var(--c) 0;
+              background:
+                linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+                linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+              outline: calc(var(--w)/2) solid rgba(85, 85, 85, 0.076);
+              outline-offset: calc(var(--w)/-2 - 2*var(--s));
+              transition: .4s;
+              cursor: pointer;
+            }
+            img:hover {
+              outline: var(--b) solid var(--c);
+              outline-offset: calc(var(--s)/-2);
+              --_i: calc(100% - 2*var(--s));
+            }
+    
+          p{
+              //border: 1px solid red;
+              text-align: center;
+              color: #555; 
+              
+          }
+      }
+    }
+    }
+    }
+  }

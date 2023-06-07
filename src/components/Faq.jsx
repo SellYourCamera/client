@@ -15,7 +15,7 @@ export default function FAQ() {
 
   return (
     <div style={{background:'#00c0e9'}}>
-        <div style={{padding:'30px 200px 60px 70px'}}>
+        <div style={{padding:'10% 5%'}}>
         <h2>General FAQ's</h2>
       <Accordion
       sx={{
@@ -26,7 +26,7 @@ export default function FAQ() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '300px', flexShrink: 0 }}>
           How can I sell my old Camera ?
           </Typography>
           {/* <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography> */}
@@ -43,7 +43,7 @@ export default function FAQ() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>What do you do with old camera ?</Typography>
+          <Typography sx={{ width: '300px', flexShrink: 0 }}>What do you do with old camera ?</Typography>
           {/* <Typography sx={{ color: 'text.secondary' }}>
             You are currently not an owner
           </Typography> */}
@@ -60,7 +60,7 @@ export default function FAQ() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '300px', flexShrink: 0 }}>
           Do you buy damage cameras ?
           </Typography>
           {/* <Typography sx={{ color: 'text.secondary' }}>
@@ -79,11 +79,11 @@ export default function FAQ() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
+          <Typography sx={{ width: '300px', flexShrink: 0 }}>In how many days you pickup camera ?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ color: 'text.secondary' }}>
-          Yes, We buy any camera with Physically Damaged, Dead or any kind of functional issue.
+          We try to reach you as soon as possible, However we reach you within 3 bussiness days.
           </Typography>
         </AccordionDetails>
       </Accordion>

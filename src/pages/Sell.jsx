@@ -9,7 +9,7 @@ import SellDSLR from "./DSLR";
 const Sell = () => {
     return (
 
-  <div className="row">
+  <div className="sell-row">
     <div className="col">
     <img src={Sellimg} alt="Selling Img" className="image-fluid sellimg" />
     </div>
@@ -18,6 +18,7 @@ const Sell = () => {
     <div className="heading">
         Select The Category:
     </div>
+    <div className="parent-item">
     <Link to="/DSLR" target="_self" rel="noreferrer">
     <div className="item">
         <img src={DSLR} alt="DSLR" />
@@ -36,6 +37,7 @@ const Sell = () => {
     <p className="cam">Video Camera</p>
     </div>
     </Link>
+    </div>
 
 </div>
 </div>
