@@ -21,7 +21,7 @@
         flex-direction: row;
         justify-content: center;
         vertical-align: center;
-        z-index: 1;
+        z-index: 3;
     }
 
     .home-modal-box .home-modal-overlay .home-modal-pop {
@@ -66,7 +66,7 @@
         flex-direction: row;
         justify-content: center;
         vertical-align: center;
-        z-index: 1;
+        z-index: 3;
     }
 
     .home-modal-box .home-modal-overlay .home-modal-pop {
