@@ -81,7 +81,7 @@ const Modal = ({ setIsModalOpen }) => {
         };
         
         try {
-            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/userCallRequest`, userDataToSend, {
+            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend, {
             });
             console.log(apiResponse);
         } catch (error) {
@@ -105,7 +105,7 @@ const Modal = ({ setIsModalOpen }) => {
     }
 
     const handleMakeCall = () => {
-        window.location.href = 'tel:+91 9897408751';
+        window.location.href = 'tel:+91 9557755504';
     }
 
     return (
