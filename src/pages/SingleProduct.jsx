@@ -15,7 +15,7 @@ const SingleProduct = () => {
   useEffect(() => {
 
     async function fetchData() {
-      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/get-brand-product?brandName=${brandName}`);
+      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-brand-product?brandName=${brandName}`);
 
       setProductData(result.data.data);
     }

@@ -79,9 +79,7 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
 
         };
-        console.log(userDataToSend);
-        console.log(process.env.REACT_APP_Backend_URL,process.env.REACT_APP_Backend_PORT)
-
+        
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}:${process.env.REACT_APP_Backend_PORT}/api/userCallRequest`, userDataToSend, {
             });
@@ -89,7 +87,6 @@ const Modal = ({ setIsModalOpen }) => {
         } catch (error) {
             console.log(error);
         }
-        console.log(emailSend,emailSendStatus,apiResponse);
 
         //check data send or not
 

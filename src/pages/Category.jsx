@@ -21,18 +21,17 @@ const Category = () => {
             </Typography>
             </div>
             <div>
-            <Box sx={{
-  border: "10px solid green",
-  display: "flex",
-  width: "100%",
-  maxWidth: "1000px",
-  '@media (max-width: 600px)': {
-    width: "90%",
-    maxWidth: "100%"
-  }
-}}>
+                <Box sx={{
+                    display: "flex",
+                    width: "100%",
+                    maxWidth: "1000px",
+                    '@media (max-width: 600px)': {
+                        width: "90%",
+                        maxWidth: "100%"
+                    }
+                }}>
                     <Grid container>
-                        <div className='grid-view' style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"center"}}>
+                        <div className='grid-view' style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
 
                             <Grid item xs={12} md={6} lg={4} margin={2}>
                                 <item>
@@ -62,7 +61,7 @@ const Category = () => {
                             </Grid>
                             <Grid item xs={12} md={6} lg={4} margin={2}>
                                 <item>
-                                    <Card sx={{ maxWidth:310 }}>
+                                    <Card sx={{ maxWidth: 310 }}>
                                         <Link style={{ textDecoration: "none" }} to={"/VideoCamera"} target="_self" >
                                             <CardActionArea>
                                                 <CardMedia
