@@ -1,55 +1,22 @@
 .dslrcontainer {
 
-  border: 2px solid #fafafa;
+  border: 2px solid #f1f1f1; //fafafa
   border-radius: 20px;
   margin: 40px 60px;
-  padding: 10px 5px 10px 10;
- 
+  padding: 10px 5px 10px 30px;
 
-  @media only screen and (max-width: 768px) {
 
-    margin: 0px;
-    padding: 2%;
-    border-color: #fafafa;
-    border-radius: 10px;
-    margin: 30px 30px;
-   
-  }
-
-    .row {
-      @media only screen and (max-width: 768px) {
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        text-align: center;
-        margin: auto;
-        height: 450px;
-     
-      }
-    
+    .dslr-row {
+     display: flex;
+     flex-direction: row;
       .col-left {
         width: 50%;
-        @media only screen and (max-width: 768px) {
-          margin: 0px 50px;
-          width: 100%;
-          
-        }
-
       }
       
-      .col{
+      .col-right{
         width: 50%;
-        @media only screen and (max-width: 768px) {
-          margin: auto;
-          padding: 0%;
-          width: 100%;
-          visibility: hidden;
-        }
       }
     }
-
-  
-
 
   .underline-small {
     color: rgb(62, 61, 60);
@@ -68,10 +35,6 @@
   }
 
   form {
-    @media only screen and (max-width: 768px) {
-      width:95%;
-      
-    }
     width: 80%;
     padding: auto;
     text-align: left;
@@ -132,10 +95,6 @@
       position: relative;
 
       &:before {
-        @media only screen and (max-width: 768px) {
-         visibility: hidden;
-          
-        }
         content: "";
         display: block;
         width: 126px;
@@ -236,4 +195,74 @@
   }
 
 
+}
+
+
+
+@media only screen and (max-width: 768px){
+.dslrcontainer{
+ 
+  margin: 40px 15px;
+  width: auto;
+   .dslr-row {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     width: 100%;
+     height: fit-content;
+      .col-left {
+        width: 100%;
+
+        .brandcontainer{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          h4 {
+    
+            font-family: sans-serif;
+            margin: 40px 20px auto;
+            color: rgb(219, 218, 217);
+            text-align: center;
+            font-size: 20px;
+            max-width: 700px;
+            position: relative;
+      
+            &:before {
+              width: 126px;
+              height: 2px;
+              background: rgb(219, 218, 217);
+              left: calc(10% - 13%);
+              top: 50%;
+              position: absolute;
+              visibility: hidden;
+            }
+          }
+         
+          form {
+            width: 90%;
+            padding: auto;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: -10px;
+        
+        
+            input {
+              padding: 16px 15px;
+              border: 2px solid rgb(223, 220, 226);
+              border-radius: 8px;
+              width: inherit;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      
+      .col-right{
+        width: 100%;
+        display: none;
+      }
+    }
+  }
 }

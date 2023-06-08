@@ -15,7 +15,7 @@ const DSLR = () => {
 
   return (
     <div className="dslrcontainer" >
-      <div className="row">
+      <div className="dslr-row">
         <div className="col-left">
           <div className="brandcontainer">
             <h2 className="underline-small">Sell Your Old DSLR Camera on CamMart</h2>
@@ -57,7 +57,7 @@ const DSLR = () => {
           </div>
         </div>
 
-        <div className="col">
+        <div className="col-right">
           <div className="imgcontainer">
             <p>Sell your DSLR camera and, Action Camera <br />& Video Camera @ Best Price.</p>
             <img src={Sellimg} alt="banner" />
