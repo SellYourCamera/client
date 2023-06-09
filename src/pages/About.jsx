@@ -9,6 +9,8 @@ const About = () => {
                 dkjjaflkashfd
                 kdhjafksdha
                 kjdhasjklfhas
+                lksadjflkjsa
+                kjsdjajflk
             </p>
         </div>
     )

@@ -15,7 +15,7 @@ export default function FAQ() {
 
   return (
     <div style={{background:'#00c0e9'}}>
-        <div style={{padding:'10% 5%'}}>
+        <div style={{padding:'10%'}}>
         <h2>General FAQ's</h2>
       <Accordion
       sx={{
