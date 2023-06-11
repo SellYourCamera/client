@@ -37,7 +37,7 @@ const Quotation = () => {
 
 
     return (
-        <div className="container" >
+        <div className="quotation-container" >
             <div className="row-1">
                 <div className="col-1">
                     <div className="quotation-section">

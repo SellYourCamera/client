@@ -1,43 +1,161 @@
-.container {
-    box-sizing: border-box;
-    display: flex;
-
-    .header {
-        width: 100%;
-        float: left;
-        padding: 15px;
-        margin-bottom:-15px ;
-       
-    }
-
-    .row {
-        width: 100%;
+@media only screen and (max-width:550px){
+    .container-model {
+        width: auto;
         border: 2px solid #fafafa;
         border-radius: 17px;
-        justify-content: center;
+        margin: 20px;
+        padding: 0px 10px 35px 10px;
         box-shadow: 1px 0px 10px 1px #fafafa;
-        margin-left: 15px;
-        padding:64px 0px ;
+        .header {
+            width: 100%;
+            float: left;
+            padding: 15px;
+            margin-bottom:-15px ;
+           
+        }
+    
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
 
-        .col-1 {
-            width: 35%;
-            .content{
-                img{
-                    width: 300px;
-                    height: auto;
+    
+            .col-1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+              
+                .content{
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
                 }
             }
+    
+            .col-2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                float: left;
+    
+               .imgsection{
+                text-align: center;
+               }
+               h4{
+                margin: auto;
+                color: red;
+               }
+            }
         }
+    }
+}
 
-        .col-2 {
-            width: 70%;
+@media (min-width:551px) and (max-width:1000px){
+    .container-model {
+        box-sizing: border-box;
+        display: flex;
+        .header {
+            width: 100%;
             float: left;
-            margin-left: 5%;
+            padding: 20px 25px;
+            margin-bottom:-15px ;
+           
+        }
+    
+        .row {
+            width: 90%;
+            border: 2px solid #fafafa;
+            border-radius: 17px;
+            justify-content: center;
+            box-shadow: 1px 0px 10px 1px #fafafa;
+            margin-left: 15px;
+            padding:64px 20px ;
+            display: flex;
+            flex-direction: row;
+    
+            .col-1 {
+                width: 100%;
+                .content{
+                    img{
+                        width: 70%;
+                        height: auto;
+                    }
+                }
+            }
+    
+            .col-2 {
+                width: 100%;
+                float: left;
+                margin-left: 5%;
+    
+               .imgsection{
+                text-align: center;
+              
+               }
+               h4{
+                color: red;
+               }
+            }
+        }
+    }
+}
 
-           .imgsection{
-            text-align: center;
-          
-           }
+
+@media only screen and (min-width:1001px) {
+    .container-model {
+        box-sizing: border-box;
+        display: flex;
+    
+        .header {
+            width: 100%;
+            float: left;
+            padding: 15px;
+            margin-bottom:-15px ;
+           
+        }
+    
+        .row {
+            width: 100%;
+            border: 2px solid #fafafa;
+            border-radius: 17px;
+            justify-content: center;
+            box-shadow: 1px 0px 10px 1px #fafafa;
+            margin-left: 15px;
+            padding:64px 0px ;
+            display: flex;
+            flex-direction: row;
+    
+            .col-1 {
+                width: 35%;
+                .content{
+                    img{
+                        width: 300px;
+                        height: auto;
+                    }
+                }
+            }
+    
+            .col-2 {
+                width: 70%;
+                float: left;
+                margin-left: 15%;
+    
+               .imgsection{
+                text-align: center;
+              
+               }
+               h4{
+                color: red;
+               }
+            }
         }
     }
 }

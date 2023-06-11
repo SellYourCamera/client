@@ -41,7 +41,7 @@ const SingleProduct = () => {
       {/* div for items */}
 
       <div className="container" >
-        <div key="div" style={{ border: "", width: "100%", margin: '0px 30px' }}><h3>Select Model</h3></div>
+        <div className="heading" key="div"><h3>Select Model</h3></div>
         {
           productData.map((product) => (
             <div onClick={() => handleModelClick(product.product_model)} className="item" style={{ boxShadow: '0px 1px 8px 1px rgba(0,0,0,0.08)' }}>

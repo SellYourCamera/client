@@ -41,7 +41,7 @@ const handleModelClick = (product) => {
 
 
   return (
-    <div className="container" >
+    <div className="container-model" >
       {
         productData.map((product) => (
           <div key={product._id}>

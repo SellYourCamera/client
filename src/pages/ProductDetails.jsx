@@ -116,7 +116,7 @@ const ProductDetails = () => {
   console.log(productDetailObj);
 
   return (
-    <div className="container" >
+    <div className="product-container" >
 
       <div className="row-1">
         <div className="col-1">

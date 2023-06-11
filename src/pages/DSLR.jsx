@@ -1,16 +1,31 @@
 import Sellimg from "../assets/img/Sellimg.jpg";
 import "./Dslr.scss";
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const DSLR = () => {
 
   const navigate = useNavigate();
+  const serachData='';
+  const filterData='';
   const [brandName, setBrandName] = useState("");
   const handleBrandClick = (name) => {
     setBrandName(name);
     navigate('/single-product', { state: { brandName: name } });
   };
+
+  // useEffect(()=>{
+  //     data= axios.get(`${REACT_APP_Backend_URL}/api/searchdata`);
+  //     data
+  // })
+  const handlesSearchChange = (e) =>({
+
+   
+
+  })
+
+  
 
 
   return (
@@ -19,7 +34,12 @@ const DSLR = () => {
         <div className="col-left">
           <div className="brandcontainer">
             <h2 className="underline-small">Sell Your Old DSLR Camera on CamMart</h2>
-            <form><input type="text" placeholder="Search Brand" /></form>
+            <form><input type="text" placeholder="Search Brand" onChange={handlesSearchChange} /></form>
+            {/* <div className="search-result">
+              <div>A</div>
+              <div>B</div>
+              <div>C</div>
+            </div> */}
             <h4 className="category"> or Choose Gadget Brand</h4>
             {brandName}
             <ul>

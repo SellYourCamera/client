@@ -79,7 +79,7 @@ const Accessories = () => {
 
 
     return (
-        <div className="container" >
+        <div className="accessories-container" >
 
             <div className="row-1">
                 <div className="col-1">
@@ -90,37 +90,57 @@ const Accessories = () => {
                     </div>
 
                     <div className="accesories-list">
+                        <div className="items">
                         <div className={getaccesItemClassName("orignal bag")} onClick={() => handleAssossoriesOnClick("orignal bag")}>
                             <div className="imgsection"><img src={bagIcon} alt="orignal bag" /></div>
-                            <h4>Orignal Bag</h4>
+                          <div className="heading">  <h4>Orignal Bag</h4></div>
                         </div>
+                        </div>
+
+                        <div className="items">
                         <div className={getaccesItemClassName("orignal battery")} onClick={() => handleAssossoriesOnClick("orignal battery")}>
                             <div className="imgsection"><img src={batteryIcon} alt="orignal battery" /></div>
-                            <h4>Orignal Battery</h4>
+                            <div className="heading"> <h4>Orignal Battery</h4></div>
                         </div>
+                        </div>
+
+                        <div className="items">
                         <div className={getaccesItemClassName("bill")} onClick={() => handleAssossoriesOnClick("bill")}>
                             <div className="imgsection"><img src={billIcon} alt="bill" /></div>
-                            <h4>Bill</h4>
+                            <div className="heading"> <h4>Bill</h4></div>
                         </div>
+                        </div>
+
+                        <div className="items">
                         <div className={getaccesItemClassName("box")} onClick={() => handleAssossoriesOnClick("box")}>
                             <div className="imgsection"><img src={boxIcon} alt="box" /></div>
-                            <h4>Box</h4>
+                            <div className="heading"><h4>Box</h4></div>
                         </div>
+                        </div>
+
+                        <div className="items">
                         <div className={getaccesItemClassName("orignal cable")} onClick={() => handleAssossoriesOnClick("orignal cable")}>
                             <div className="imgsection"><img src={cableIcon} alt="orignal cable" /></div>
-                            <h4>Orignal Cable</h4>
+                            <div className="heading"><h4>Orignal Cable</h4></div>
                         </div>
+                        </div>
+
+                        <div className="items">
                         <div className={getaccesItemClassName("orignal charger")} onClick={() => handleAssossoriesOnClick("orignal charger")}>
                             <div className="imgsection"><img src={chargerIcon} alt="orignal charger" /></div>
-                            <h4>Orignal Charger</h4>
+                            <div className="heading"><h4>Orignal Charger</h4></div>
+                        </div>
                         </div>
                         {/* <div className={getaccesItemClassName("orignal sdcard")} onClick={() => handleAssossoriesOnClick("orignal sdcard")}>
                             <div className="imgsection"><img src={require("../icons/accessories/card.svg")} alt="orignal sdcard" /></div>
                             <h4>Orignal Card</h4>
                         </div> */}
+
+                        <div className="items">
                         <div className={getaccesItemClassName("tripod")} onClick={() => handleAssossoriesOnClick("tripod")}>
                             <div className="imgsection"><img src={tripodIcon} alt="tripod" /></div>
-                            <h4>Tri-Pod</h4>
+                            <div className="heading"><h4>Tri-Pod</h4></div>
+                        </div>
                         </div>
                     </div>
 
