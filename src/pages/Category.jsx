@@ -47,7 +47,7 @@ const Category = () => {
                    
                     <Grid item xs={12} md={6} lg={4} >
                         <Card sx={{ padding: '20px' }}>
-                            <Link style={{ textDecoration: "none" }} to={"/VideoCamera"} target="_self" >
+                            <Link style={{ textDecoration: "none" }} to={"/action-camera"} target="_self" >
                                 <CardActionArea>
                                     <CardMedia
                                         component="img"
@@ -71,7 +71,7 @@ const Category = () => {
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
                         <Card sx={{ padding: '20px' }}>
-                            <Link style={{ textDecoration: "none" }} to={"/VideoCamera"} target="_self" >
+                            <Link style={{ textDecoration: "none" }} to={"/video-camera"} target="_self" >
                                 <CardActionArea>
                                     <CardMedia
                                         component="img"

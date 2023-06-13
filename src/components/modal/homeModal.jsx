@@ -16,7 +16,7 @@ import Divider from '@mui/material/Divider';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
@@ -40,6 +40,19 @@ const Modal = ({ setIsModalOpen }) => {
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
     const [brand, setBrand] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
+
+    useEffect(() => {
+
+  
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+  
+      return () => {
+        clearTimeout(timer);
+      };
+    },showAlert);
 
     console.log(email, username, phone, brand);
     var emailSendStatus;
@@ -91,9 +104,27 @@ const Modal = ({ setIsModalOpen }) => {
         //check data send or not
 
         if (apiResponse && emailSendStatus === 200 && apiResponse.status === 200) {
-            alert("Data sent successfully");
+            setShowAlert(true);
+            const timer = setTimeout(() => {
+                setShowAlert(false);
+              }, 3000);
+          
+              return () => {
+                clearTimeout(timer);
+              };
           } else {
-            alert("Data not sent");
+            setShowAlert(true);
+            const timer = setTimeout(() => {
+                setShowAlert(false);
+              }, 3000);
+
+              const timer1 = setTimeout(() => {
+                setIsModalOpen(false);
+              }, 3000);
+          
+              return () => {
+                clearTimeout(timer,timer1);
+              };
           }
           
 
@@ -110,6 +141,11 @@ const Modal = ({ setIsModalOpen }) => {
 
     return (
         <div className="home-modal-box">
+               {showAlert && (
+        <div className="top-alert">
+          <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
+        </div>
+      )} 
             <div className="home-modal-overlay">
                 <div className="home-modal-pop">
                     <ThemeProvider theme={theme}>
@@ -256,7 +292,10 @@ const Modal = ({ setIsModalOpen }) => {
                         </Container>
                     </ThemeProvider>
 
+
+      
                 </div>
+             
             </div>
         </div>
     )

@@ -27,6 +27,22 @@ const Home = () => {
     }
 
 
+    //alert
+    const [showAlert, setShowAlert] = useState(false);
+
+    useEffect(() => {
+      setShowAlert(true);
+  
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+  
+      return () => {
+        clearTimeout(timer);
+      };
+    }, []);
+
+
     
 return (
     <div>
@@ -37,6 +53,11 @@ return (
         {isModalOpen && <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>}
         <Category/>
         <DSLRBrand/>
+        {showAlert && (
+        <div className="top-alert show">
+          <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
+        </div>
+      )}
 
         <FAQ/>
 

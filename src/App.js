@@ -20,6 +20,8 @@ import Hero from "./components/hero/Hero";
 import DamageQuatation from "../src/assets/formsteps/damageQuatation";
 import SignIn from "./components/Authentication/signin";
 import Modal from "./components/modal/homeModal";
+import ActionCamera from "./pages/ActionCamera";
+import VideoCamera from "./pages/VideoCamera";
 
 
 
@@ -46,6 +48,8 @@ function App() {
         <Route path="/damageQuatation" element={<DamageQuatation />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/modal" element={<Modal />}  />
+        <Route path="/action-camera" element={<ActionCamera/>} />
+        <Route path="/video-camera" element={<VideoCamera/>} />
         
 
       </Routes>
