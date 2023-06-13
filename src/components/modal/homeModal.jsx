@@ -141,11 +141,11 @@ const Modal = ({ setIsModalOpen }) => {
 
     return (
         <div className="home-modal-box">
-               {showAlert && (
-        <div className="top-alert">
-          <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
-        </div>
-      )} 
+          {showAlert && (
+      <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}>
+        <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
+      </div>
+    )}
             <div className="home-modal-overlay">
                 <div className="home-modal-pop">
                     <ThemeProvider theme={theme}>

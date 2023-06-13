@@ -18,10 +18,10 @@ const Category = () => {
             </Typography>
            
             <Box>
-                <Grid container spacing={2}>
+                <Grid container spacing={8} sx={{ padding: '2% 15%' }}>
                     
                     <Grid item xs={12} md={6} lg={4}>
-                        <Card sx={{ padding: '20px' }}>
+                        <Card>
                             <Link style={{ textDecoration: "none" }} to={"/DSLR"} target="_self" >
                                 <CardActionArea>
                                     <CardMedia
@@ -46,7 +46,7 @@ const Category = () => {
                     </Grid>
                    
                     <Grid item xs={12} md={6} lg={4} >
-                        <Card sx={{ padding: '20px' }}>
+                        <Card>
                             <Link style={{ textDecoration: "none" }} to={"/action-camera"} target="_self" >
                                 <CardActionArea>
                                     <CardMedia
@@ -70,7 +70,7 @@ const Category = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
-                        <Card sx={{ padding: '20px' }}>
+                        <Card>
                             <Link style={{ textDecoration: "none" }} to={"/video-camera"} target="_self" >
                                 <CardActionArea>
                                     <CardMedia

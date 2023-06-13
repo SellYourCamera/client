@@ -16,7 +16,7 @@ const DslrBrand = () => {
 
         <div className="dslr_brand_section">
             <div className="content-heading">
-                <h1>Best DSLR Camera Selling Brand</h1>
+                <h1>Our Most DSLR Camera Selling Brand</h1>
                 <p>Sell Your DSLR Camera of Any Brand  ✌🙂</p>
             </div>
             <div className="MyGallery">
