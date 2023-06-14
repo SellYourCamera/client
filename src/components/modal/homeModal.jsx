@@ -102,7 +102,6 @@ const Modal = ({ setIsModalOpen }) => {
 
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
-            setApiResponseStatus(200)
             console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status);
             
         } catch (error) {
@@ -113,6 +112,7 @@ const Modal = ({ setIsModalOpen }) => {
 
         if (apiResponse && emailSendStatus === 200 && apiResponse.status === 200) {
             setEmailMsg('Thank You For Call Request. We will connect you soon.');
+            setApiResponseStatus(200);
             setShowAlert(true);
             const timer = setTimeout(() => {
                 setShowAlert(false);
