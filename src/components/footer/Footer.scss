@@ -1,11 +1,12 @@
 @media only screen and (min-width:998px){
   .footer {
-    padding: 20px;
-    border-top: 1px solid rgb(105, 105, 105,0.9);
-    margin: 100px 200px 20px 200px;
+    background-color: #1876d2;
+    padding: 100px 200px 20px 200px;
+    border-top: 1px solid #fafafa;
+   
     hr{
         margin: 30px 0px -20px 0px;
-        color: rgb(105, 105, 105);
+        color: #fafafa;
         height: 1;
 
     }
@@ -25,11 +26,11 @@
         h1{
           font-size: 18px;
           font-weight: 500;
-          color: #555;
+          color: #fafafa;
         }
   
         span{
-          color: gray;
+          color: #fafafa;
         }
       }
     }
@@ -44,7 +45,7 @@
         align-items: center;
   
         .logo{
-          color: #2879fe;
+          color: #fafafa;
           font-weight: bold;
           font-size: 24px;
         }
@@ -52,7 +53,7 @@
         .copyright{
           margin-left: 20px;
           font-size: 12px;
-          color: gray;
+          color: #000;
         }
       }
       .right {
@@ -68,14 +69,15 @@
 @media only screen and (max-width: 997.9px) {
 
   .footer {
-    border-top: 1px solid rgb(105, 105, 105,0.9);
+    background-color: #1876d2;
+    border-top: 1px solid #fafafa;
     margin:auto;
     margin-top: 10%;
     display: flex;
     flex-direction: column;
     hr{
         margin: 30px 0px -20px 0px;
-        color: rgb(105, 105, 105);
+        color: #fafafa;
         height: 1;
 
     }
@@ -100,11 +102,11 @@
         h1{
           font-size: 18px;
           font-weight: 500;
-          color: #555;
+          color: #fafafa;
         }
   
         span{
-          color: gray;
+          color: #fafafa;
         }
       }
     }
@@ -119,7 +121,7 @@
         align-items: center;
   
         .logo{
-          color: #2879fe;
+          color: #fafafa;
           font-weight: bold;
           font-size: 24px;
         }
@@ -127,7 +129,7 @@
         .copyright{
           margin-left: 20px;
           font-size: 12px;
-          color: gray;
+          color: fafafa;
         }
       }
       .right {

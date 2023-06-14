@@ -47,7 +47,7 @@ const Home = () => {
 return (
     <div>
         <Hero isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
-        <VideoHero></VideoHero>
+        {/* <VideoHero></VideoHero> */}
         {/* <Slider/> */}
         {/* <SellSection/> */}
         {isModalOpen && <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>}

@@ -150,7 +150,7 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-          <img height="60px" width="auto" src={require('../../assets/img/logo.png')}/>
+          <img height="50px" width="auto" src={require('../../assets/img/logo.png')}/>
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>

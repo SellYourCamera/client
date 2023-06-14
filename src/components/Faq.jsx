@@ -14,7 +14,7 @@ export default function FAQ() {
   };
 
   return (
-    <div style={{ background: '#00c0e9', margin: '0px' }}>
+    <div style={{ background: '#fafafa', margin: '0px' }}>
       <div style={{ padding: '2% 10% 5% 10%' }}>
         <h2>General FAQ's</h2>
         <Accordion
