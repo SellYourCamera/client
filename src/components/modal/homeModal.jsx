@@ -16,9 +16,10 @@ import Divider from '@mui/material/Divider';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import Alert from '@mui/material/Alert';
+import { green, red } from '@mui/material/colors';
 import Stack from '@mui/material/Stack';
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input';
 import axios from 'axios';
@@ -36,26 +37,31 @@ const theme = createTheme();
 
 const Modal = ({ setIsModalOpen }) => {
 
+    const successColor = green[500];
+    const errorColor = red[500];
+
     const [email, setEmail] = useState('')
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
     const [brand, setBrand] = useState('');
+    const [emailMsg,setEmailMsg] = useState('Form do not submitted, Something wrong.');
     const [showAlert, setShowAlert] = useState(false);
+    var emailSendStatus;
 
     useEffect(() => {
 
-  
-      const timer = setTimeout(() => {
-        setShowAlert(false);
-      }, 3000);
-  
-      return () => {
-        clearTimeout(timer);
-      };
-    },showAlert);
+
+        const timer = setTimeout(() => {
+            setShowAlert(false);
+        }, 3000);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, showAlert);
 
     console.log(email, username, phone, brand);
-    var emailSendStatus;
+   
 
 
     //handle form submit
@@ -72,7 +78,7 @@ const Modal = ({ setIsModalOpen }) => {
         }, 'Xr7TiVGL2mxbnjbe7')
             .then((result) => {
                 console.log('Email sent successfully', result.text);
-                emailSendStatus=200;
+                emailSendStatus = 200;
                 //     <Stack sx={{ width: '100%' }} spacing={2}>
                 //   <Alert 
                 //   severity="success">Call Request Send You Get Confirmation Mail and We Will connect you soon.</Alert>   
@@ -92,7 +98,7 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
 
         };
-        
+
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend, {
             });
@@ -104,29 +110,29 @@ const Modal = ({ setIsModalOpen }) => {
         //check data send or not
 
         if (apiResponse && emailSendStatus === 200 && apiResponse.status === 200) {
-            setShowAlert(true);
+            setEmailMsg('Thank You For Call Request. We will connect you soon.').setShowAlert(true);
             const timer = setTimeout(() => {
                 setShowAlert(false);
-              }, 3000);
-          
-              return () => {
-                clearTimeout(timer);
-              };
-          } else {
-            setShowAlert(true);
-            const timer = setTimeout(() => {
-                setShowAlert(false);
-              }, 3000);
+            }, 3000);
 
-              const timer1 = setTimeout(() => {
+            return () => {
+                clearTimeout(timer);
+            };
+        } else {
+            setShowAlert(true);
+            const timer = setTimeout(() => {
+                setShowAlert(false);
+            }, 3000);
+
+            const timer1 = setTimeout(() => {
                 setIsModalOpen(false);
-              }, 3000);
-          
-              return () => {
-                clearTimeout(timer,timer1);
-              };
-          }
-          
+            }, 3000);
+
+            return () => {
+                clearTimeout(timer, timer1);
+            };
+        }
+
 
     };
 
@@ -141,11 +147,14 @@ const Modal = ({ setIsModalOpen }) => {
 
     return (
         <div className="home-modal-box">
-          {showAlert && (
-      <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}>
-        <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
-      </div>
-    )}
+            {showAlert && (
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: emailSendStatus === 200 ? successColor : errorColor }}>
+                    <div className="alert-content">
+                       {emailMsg}
+                    </div>
+                </div>
+            )}
+
             <div className="home-modal-overlay">
                 <div className="home-modal-pop">
                     <ThemeProvider theme={theme}>
@@ -154,7 +163,7 @@ const Modal = ({ setIsModalOpen }) => {
                             <Box
                                 sx={{
                                     marginTop: 4,
-                                    marginBottom:4,
+                                    marginBottom: 4,
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -293,9 +302,9 @@ const Modal = ({ setIsModalOpen }) => {
                     </ThemeProvider>
 
 
-      
+
                 </div>
-             
+
             </div>
         </div>
     )
