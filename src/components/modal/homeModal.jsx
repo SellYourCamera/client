@@ -46,7 +46,7 @@ const Modal = ({ setIsModalOpen }) => {
     const [brand, setBrand] = useState('');
     const [emailMsg,setEmailMsg] = useState('Form do not submitted, Something wrong.');
     const [showAlert, setShowAlert] = useState(false);
-    var emailSendStatus;
+    var emailSendStatus=0;
 
     useEffect(() => {
 
@@ -102,7 +102,7 @@ const Modal = ({ setIsModalOpen }) => {
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend, {
             });
-            console.log(apiResponse,apiResponse.status);
+            console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status);
         } catch (error) {
             console.log(error);
         }
@@ -146,6 +146,7 @@ const Modal = ({ setIsModalOpen }) => {
         window.location.href = 'tel:+91 9557755504';
     }
 
+    console.log('emailsendstatus',emailSendStatus);
     return (
         <div className="home-modal-box">
             {showAlert && (
