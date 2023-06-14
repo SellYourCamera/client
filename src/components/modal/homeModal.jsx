@@ -102,7 +102,7 @@ const Modal = ({ setIsModalOpen }) => {
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend, {
             });
-            console.log(apiResponse);
+            console.log(apiResponse,apiResponse.status);
         } catch (error) {
             console.log(error);
         }
@@ -136,11 +136,11 @@ const Modal = ({ setIsModalOpen }) => {
 
     };
 
-
+//popup modal
     const handlemodalclose = () => {
         setIsModalOpen(false);
     }
-
+//make call
     const handleMakeCall = () => {
         window.location.href = 'tel:+91 9557755504';
     }
