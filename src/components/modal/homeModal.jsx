@@ -46,7 +46,8 @@ const Modal = ({ setIsModalOpen }) => {
     const [brand, setBrand] = useState('');
     const [emailMsg,setEmailMsg] = useState('Form do not submitted, Something wrong.');
     const [showAlert, setShowAlert] = useState(false);
-    var emailSendStatus=0;
+    const [emailSendStatus,setEmailSendStatus] = useState(0);
+    const [apiResponseStatus,setApiResponseStatus] = useState(0);
 
     useEffect(() => {
 
@@ -78,7 +79,7 @@ const Modal = ({ setIsModalOpen }) => {
         }, 'Xr7TiVGL2mxbnjbe7')
             .then((result) => {
                 console.log('Email sent successfully', result.text);
-                emailSendStatus = 200;
+                setEmailSendStatus(200);
                 //     <Stack sx={{ width: '100%' }} spacing={2}>
                 //   <Alert 
                 //   severity="success">Call Request Send You Get Confirmation Mail and We Will connect you soon.</Alert>   
@@ -100,9 +101,10 @@ const Modal = ({ setIsModalOpen }) => {
         };
 
         try {
-            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend, {
-            });
+            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
+            setApiResponseStatus(200)
             console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status);
+            
         } catch (error) {
             console.log(error);
         }
@@ -150,7 +152,7 @@ const Modal = ({ setIsModalOpen }) => {
     return (
         <div className="home-modal-box">
             {showAlert && (
-                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: emailSendStatus === 200 ? successColor : errorColor }}>
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: (apiResponseStatus===200 && emailSendStatus === 200) ? successColor : errorColor }}>
                     <div className="alert-content">
                        {emailMsg}
                     </div>
