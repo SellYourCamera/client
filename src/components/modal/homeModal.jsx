@@ -99,15 +99,14 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
 
         };
-
-        try {
-            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
-            setApiResponseStatus(200);
-            console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status,apiResponseStatus);
-            
-        } catch (error) {
+//for api data send to server
+            var apiResponse = await (await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend))
+            .then(() => {
+                setApiResponseStatus(200);
+                console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status,apiResponseStatus);
+            }, (error) =>{
             console.log(error);
-        }
+        });
 
         //check data send or not
 
@@ -153,7 +152,7 @@ const Modal = ({ setIsModalOpen }) => {
     return (
         <div className="home-modal-box">
             {showAlert && (
-                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: (apiResponseStatus===200 && emailSendStatus === 200) ? successColor : errorColor }}>
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: (apiResponseStatus===200 && emailSendStatus === 200)? successColor : errorColor }}>
                     <div className="alert-content">
                        {emailMsg}
                     </div>
