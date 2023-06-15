@@ -110,7 +110,7 @@ const Modal = ({ setIsModalOpen }) => {
 
         //check data send or not
 
-        if (apiResponse && emailSendStatus === 200 && apiResponse.status === 200) {
+        if (emailSendStatus === 200 && apiResponseStatus === 200) {
             setEmailMsg('Thank You For Call Request. We will connect you soon.');
          
             setShowAlert(true);
