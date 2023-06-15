@@ -101,17 +101,13 @@ const Modal = ({ setIsModalOpen }) => {
         };
         //for api data send to server
         try {
-            var apiResponse = await (await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend))
+            var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
             if (apiResponse.status === 200) {
                 setApiResponseStatus(200);
+                console.log('apiReaponse,api.resonse.status', apiResponse, apiResponse.status, apiResponseStatus);
             }
-            console.log('apiReaponse,api.resonse.status', apiResponse, apiResponse.status, apiResponseStatus);
-        } catch (error) {
-            console.log(error);
-        };
 
-
-        //check data send or not
+                //check data 
 
         if (emailSendStatus === 200 && apiResponseStatus === 200) {
             setEmailMsg('Thank You For Call Request. We will connect you soon.');
@@ -138,6 +134,12 @@ const Modal = ({ setIsModalOpen }) => {
                 clearTimeout(timer, timer1);
             };
         }
+            }
+         catch (error) {
+            console.log(error);
+        };
+
+        
 
 
     };
