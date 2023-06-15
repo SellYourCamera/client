@@ -108,7 +108,12 @@ const Modal = ({ setIsModalOpen }) => {
             }
 
                 //check data 
+            }
+         catch (error) {
+            console.log(error);
+        };
 
+        
         if (emailSendStatus === 200 && apiResponseStatus === 200) {
             setEmailMsg('Thank You For Call Request. We will connect you soon.');
 
@@ -134,12 +139,6 @@ const Modal = ({ setIsModalOpen }) => {
                 clearTimeout(timer, timer1);
             };
         }
-            }
-         catch (error) {
-            console.log(error);
-        };
-
-        
 
 
     };
