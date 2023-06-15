@@ -44,10 +44,10 @@ const Modal = ({ setIsModalOpen }) => {
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
     const [brand, setBrand] = useState('');
-    const [emailMsg,setEmailMsg] = useState('Form do not submitted, Something wrong.');
+    const [emailMsg, setEmailMsg] = useState('Form do not submitted, Something wrong.');
     const [showAlert, setShowAlert] = useState(false);
-    const [emailSendStatus,setEmailSendStatus] = useState(0);
-    const [apiResponseStatus,setApiResponseStatus] = useState(0);
+    const [emailSendStatus, setEmailSendStatus] = useState(0);
+    const [apiResponseStatus, setApiResponseStatus] = useState(0);
 
     useEffect(() => {
 
@@ -62,7 +62,7 @@ const Modal = ({ setIsModalOpen }) => {
     }, showAlert);
 
     console.log(email, username, phone, brand);
-   
+
 
 
     //handle form submit
@@ -99,20 +99,23 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
 
         };
-//for api data send to server
+        //for api data send to server
+        try {
             var apiResponse = await (await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend))
-            .then(() => {
+            if (apiResponse.status === 200) {
                 setApiResponseStatus(200);
-                console.log('apiReaponse,api.resonse.status',apiResponse,apiResponse.status,apiResponseStatus);
-            }, (error) =>{
+            }
+            console.log('apiReaponse,api.resonse.status', apiResponse, apiResponse.status, apiResponseStatus);
+        } catch (error) {
             console.log(error);
-        });
+        };
+
 
         //check data send or not
 
         if (emailSendStatus === 200 && apiResponseStatus === 200) {
             setEmailMsg('Thank You For Call Request. We will connect you soon.');
-         
+
             setShowAlert(true);
             const timer = setTimeout(() => {
                 setShowAlert(false);
@@ -139,22 +142,22 @@ const Modal = ({ setIsModalOpen }) => {
 
     };
 
-//popup modal
+    //popup modal
     const handlemodalclose = () => {
         setIsModalOpen(false);
     }
-//make call
+    //make call
     const handleMakeCall = () => {
         window.location.href = 'tel:+91 9557755504';
     }
 
-    console.log('emailsendstatus',emailSendStatus);
+    console.log('emailsendstatus', emailSendStatus);
     return (
         <div className="home-modal-box">
             {showAlert && (
-                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`}  style={{ backgroundColor: (apiResponseStatus===200 && emailSendStatus === 200)? successColor : errorColor }}>
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor: (apiResponseStatus === 200 && emailSendStatus === 200) ? successColor : errorColor }}>
                     <div className="alert-content">
-                       {emailMsg}
+                        {emailMsg}
                     </div>
                 </div>
             )}
