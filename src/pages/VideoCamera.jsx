@@ -10,7 +10,7 @@ const VideoCamera = () => {
   const serachData='';
   const filterData='';
   const [brandName, setBrandName] = useState("");
-  const category="Video Camera";
+  const category='Video Camera';
   const handleBrandClick = (name) => {
     setBrandName(name);
     navigate('/single-product', { state: { brandName: name , category:category} });
@@ -34,7 +34,7 @@ const VideoCamera = () => {
       <div className="dslr-row">
         <div className="col-left">
           <div className="brandcontainer">
-            <h2 className="underline-small">Sell Your Old VideoCamera Camera.</h2>
+            <h2 className="underline-small">Sell Your Old Video Camera.</h2>
             <form><input type="text" placeholder="Search Brand" onChange={handlesSearchChange} /></form>
             {/* <div className="search-result">
               <div>A</div>
