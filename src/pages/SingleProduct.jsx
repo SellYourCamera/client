@@ -35,7 +35,7 @@ const SingleProduct = () => {
   return (
     <div>
       <div className="heading-section">
-        <h1>Sell Your Old {brandName} DSLR Camrea</h1>
+        <h1>Sell Your Old {brandName} {category}</h1>
         <img src={require(`../assets/img/${brandName}.jpeg`)} alt="DSLR" />
         <div>path section</div>
       </div>
