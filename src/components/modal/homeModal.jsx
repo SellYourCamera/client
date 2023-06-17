@@ -33,25 +33,21 @@ import "./homeModal.css";
 
 
 const theme = createTheme();
-
-
 const Modal = ({ setIsModalOpen }) => {
-
     const successColor = green[500];
     const errorColor = red[500];
 
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
     const [brand, setBrand] = useState('');
-    const [emailMsg, setEmailMsg] = useState('Form do not submitted, Something wrong.');
+
     const [showAlert, setShowAlert] = useState(false);
     const [emailSendStatus, setEmailSendStatus] = useState(0);
     const [apiResponseStatus, setApiResponseStatus] = useState(0);
+    const [emailMsg, setEmailMsg] = useState('');
 
     useEffect(() => {
-
-
         const timer = setTimeout(() => {
             setShowAlert(false);
         }, 3000);
@@ -59,18 +55,11 @@ const Modal = ({ setIsModalOpen }) => {
         return () => {
             clearTimeout(timer);
         };
-    }, showAlert);
-
-    console.log(email, username, phone, brand);
-
-
-
-    //handle form submit
+    }, [showAlert,apiResponseStatus,emailSendStatus,emailMsg]);
 
     const handleRequestCall = async (event) => {
         event.preventDefault();
 
-        // Send email using emailjs
         const emailSend = await emailjs.send('service_xh3dsun', 'template_9w4llwc', {
             user_name: username,
             user_email: email,
@@ -80,67 +69,53 @@ const Modal = ({ setIsModalOpen }) => {
             .then((result) => {
                 console.log('Email sent successfully', result.text);
                 setEmailSendStatus(200);
-                //     <Stack sx={{ width: '100%' }} spacing={2}>
-                //   <Alert 
-                //   severity="success">Call Request Send You Get Confirmation Mail and We Will connect you soon.</Alert>   
-                // </Stack>
-
             }, (error) => {
                 console.log('Failed to send email', error);
             });
-
-
-        //function to send data to the api for storing in database
 
         const userDataToSend = {
             user_name: username,
             user_email: email,
             phone: phone,
             brand: brand
-
         };
-        //for api data send to server
+
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
             if (apiResponse.status === 200) {
                 setApiResponseStatus(200);
-                console.log('apiReaponse,api.resonse.status', apiResponse, apiResponse.status, apiResponseStatus);
+                console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus);
+                setEmailMsg('Thank You For Call Request. We will connect you soon.');
+            }
+            if (emailSendStatus === 200 && apiResponseStatus === 200) {
+                setShowAlert(true);
+                const timer = setTimeout(() => {
+                    setShowAlert(false);
+                }, 3000);
+
+                return () => {
+                    clearTimeout(timer);
+                };
+            } else {
+                setEmailMsg('Form was not submitted. Something went wrong.');
+                setShowAlert(true);
+                const timer = setTimeout(() => {
+                    setShowAlert(false);
+                }, 3000);
+
+                const timer1 = setTimeout(() => {
+                    setIsModalOpen(false);
+                }, 3000);
+
+                return () => {
+                    clearTimeout(timer, timer1);
+                };
             }
 
-                //check data 
-            }
-         catch (error) {
+         
+        } catch (error) {
             console.log(error);
-        };
-
-        
-        if (emailSendStatus === 200 && apiResponseStatus === 200) {
-            setEmailMsg('Thank You For Call Request. We will connect you soon.');
-
-            setShowAlert(true);
-            const timer = setTimeout(() => {
-                setShowAlert(false);
-            }, 3000);
-
-            return () => {
-                clearTimeout(timer);
-            };
-        } else {
-            setShowAlert(true);
-            const timer = setTimeout(() => {
-                setShowAlert(false);
-            }, 3000);
-
-            const timer1 = setTimeout(() => {
-                setIsModalOpen(false);
-            }, 3000);
-
-            return () => {
-                clearTimeout(timer, timer1);
-            };
         }
-
-
     };
 
     //popup modal
@@ -152,11 +127,11 @@ const Modal = ({ setIsModalOpen }) => {
         window.location.href = 'tel:+91 9557755504';
     }
 
-    console.log('emailsendstatus', emailSendStatus);
+    console.log('emailsendstatus', emailSendStatus, 'apiResponseStatus', apiResponseStatus);
     return (
         <div className="home-modal-box">
             {showAlert && (
-                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor: (apiResponseStatus === 200 && emailSendStatus === 200) ? successColor : errorColor }}>
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor:  emailSendStatus === 200 ? successColor : errorColor }}>
                     <div className="alert-content">
                         {emailMsg}
                     </div>
@@ -305,7 +280,7 @@ const Modal = ({ setIsModalOpen }) => {
                                 </Box>
 
                             </Box>
-
+                       
                         </Container>
                     </ThemeProvider>
 

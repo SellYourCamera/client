@@ -9,10 +9,12 @@ const DSLR = () => {
   const navigate = useNavigate();
   const serachData='';
   const filterData='';
+  const category='DSLR Camera';
+  console.log('categiory',category);
   const [brandName, setBrandName] = useState("");
   const handleBrandClick = (name) => {
     setBrandName(name);
-    navigate('/single-product', { state: { brandName: name } });
+    navigate('/single-product', { state: { brandName: name,category: category } });
   };
 
   // useEffect(()=>{

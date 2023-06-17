@@ -9,13 +9,14 @@ import { useNavigate } from "react-router";
 const SingleProduct = () => {
   const location = useLocation();
   const brandName = location.state?.brandName;
+  const category = location.state?.category;
 
   const [productData, setProductData] = useState([]);
   console.log(process.env.REACT_APP_Backend_URL, process.env.REACT_APP_Backend_PORT)
   useEffect(() => {
 
     async function fetchData() {
-      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-brand-product?brandName=${brandName}`);
+      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-brand-product?brandName=${brandName}&category=${category}`);
 
       setProductData(result.data.data);
     }

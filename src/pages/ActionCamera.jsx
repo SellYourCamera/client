@@ -9,11 +9,13 @@ const ActionCamera = () => {
   const navigate = useNavigate();
   const serachData='';
   const filterData='';
+  const category='Action Camera';
   const [brandName, setBrandName] = useState("");
   const handleBrandClick = (name) => {
     setBrandName(name);
-    navigate('/single-product', { state: { brandName: name } });
+    navigate('/single-product', { state: { brandName: name,category: category } });
   };
+  
 
   // useEffect(()=>{
   //     data= axios.get(`${REACT_APP_Backend_URL}/api/searchdata`);
