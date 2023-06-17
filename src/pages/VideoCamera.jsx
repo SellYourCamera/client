@@ -10,9 +10,10 @@ const VideoCamera = () => {
   const serachData='';
   const filterData='';
   const [brandName, setBrandName] = useState("");
+  const category="Video Camera";
   const handleBrandClick = (name) => {
     setBrandName(name);
-    navigate('/single-product', { state: { brandName: name } });
+    navigate('/single-product', { state: { brandName: name , category:category} });
   };
 
   // useEffect(()=>{
