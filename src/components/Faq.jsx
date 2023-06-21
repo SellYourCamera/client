@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import "./Faq.css"
 
 export default function FAQ() {
   const [expanded, setExpanded] = React.useState(false);
@@ -14,9 +15,13 @@ export default function FAQ() {
   };
 
   return (
-    <div style={{ background: '#fafafa', margin: '0px' }}>
-      <div style={{ padding: '2% 10% 5% 10%' }}>
-        <h2>General FAQ's</h2>
+    <div className='faq-row'>
+      <div className='col-1'>
+        <img src={require("../assets/img/girl thinking.gif")}/>
+      </div>
+      <div className='col-2'>
+    
+        <h2>Some Question? Here You find answers.</h2>
         <Accordion
           sx={{
             borderBottom: '2px'
@@ -87,6 +92,42 @@ export default function FAQ() {
             </Typography>
           </AccordionDetails>
         </Accordion>
+
+        <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel4bh-content"
+            id="panel4bh-header"
+          >
+            <Typography sx={{ width: '300px', flexShrink: 0 }}>How We calculate the Value of Camera?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ color: 'text.secondary' }}>
+            We value your emotional touch with your camera. So, You can choose to follow our suggested price or set your own. Consider factors like the age, 
+            condition, and demand for your camera when determining the price.
+
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel4bh-content"
+            id="panel4bh-header"
+          >
+            <Typography sx={{ width: '300px', flexShrink: 0 }}> Can I sell other photography-related items on your platform?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ color: 'text.secondary' }}>
+            While our focus is on cameras, you may have the option to sell photography accessories and related equipment.
+             Please review our guidelines or contact our support team for clarification on specific items.
+
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+      
       </div>
     </div>
   );

@@ -23,8 +23,8 @@ const ModelDescription = () => {
   useEffect(() => {
     
     async function fetchData() {
-      //hwllo
-      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-brand-product?product_model=${ModelName}`);
+      
+      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-category-product?product_model=${ModelName}`);
       console.log(result);
       setProductData(result.data.data || []);
     }

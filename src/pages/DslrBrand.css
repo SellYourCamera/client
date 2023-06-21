@@ -46,15 +46,16 @@
         height: auto;
         display: flex;
        
+       
     }
 
     .dslr_brand_section .MyGallery .brandName img {
         height: 100px;
         width: auto;
-        border: 2px solid #f1f1f1;
         border-radius: 8px;
         margin: 15px;
         padding: auto;
+        border: 1px solid #f1f1f1;
 
     }
     .dslr_brand_section .MyGallery .brandName img:hover { transform: scale(1.1);
@@ -108,7 +109,7 @@
     .dslr_brand_section .MyGallery .brandName img {
         height: 100px;
         width: auto;
-        border: 2px solid #f1f1f1;
+        border: 1px solid #f1f1f1;
         border-radius: 8px;
         margin: 13px;
         margin-top: 25px;

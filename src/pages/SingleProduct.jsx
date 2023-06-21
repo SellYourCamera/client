@@ -14,9 +14,9 @@ const SingleProduct = () => {
   const [productData, setProductData] = useState([]);
   console.log(process.env.REACT_APP_Backend_URL, process.env.REACT_APP_Backend_PORT)
   useEffect(() => {
-
+    console.log("brand:",brandName,"model:","category",category);
     async function fetchData() {
-      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-brand-product?brandName=${brandName}&category=${category}`);
+      const result = await axios.get(`${process.env.REACT_APP_Backend_URL}/api/get-category-product?brandName=${brandName}&category=${category}`);
 
       setProductData(result.data.data);
     }

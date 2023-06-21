@@ -124,8 +124,7 @@ const Hero = ({ isModalOpen, setIsModalOpen }) => {
            <h1>
              Sell Your Camera @ Best Price
            </h1>
-           <h3>
-             Feel Free, We will be happy to make deal with you. 
+           <h3>Feel Free, We will be happy to make deal with you. 
            </h3>
            <Button
            startIcon={<ConnectWithoutContactIcon/>}

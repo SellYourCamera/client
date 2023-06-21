@@ -80,11 +80,17 @@
 
 .hero-section .hero-row .hero-content {
  
-  margin: 50px 70px 0px 20px;
+  margin: 50px 80px 0px 20px;
   width: 40%;
   max-width: 40%;
-
+  text-align: start;
+ 
 }
+.hero-section .hero-row .hero-content h3{
+  text-align: start;
+ 
+}
+
 .hero-section .hero-row .hero-content button{
   align-self: center;
   display: inline-flex;
@@ -94,12 +100,11 @@
   max-width: 60%;
   align-items: center;
   justify-content: center;
-  
   display: flex;
 }
 .hero-section .hero-row .hero-img img{
-  width: 100%;
- margin-top:-45px ;
+  width: 80%;
+
  margin-bottom: 100px;
 
 }
@@ -143,6 +148,12 @@ color: #454343E1;
     height: auto;
    
   }
+  .hero-section .hero-row .hero-content h3{
+    margin: -10px 0px 20px 0px;
+float: left;
+    color:#0a0a0a
+  }
+
   .hero-section .hero-row .hero-content button{
     align-self: center;
     display: inline-flex;
@@ -202,6 +213,20 @@ color: #454343E1;
     height: auto;
     text-align: center;
   }
+
+  .hero-section .hero-row .hero-img img{
+    width: auto;
+    }
+    .hero-section .hero-row .hero-content {
+      max-width: 100%;
+      height: auto;
+      text-align: center;
+    }
+    .hero-section .hero-row .hero-content h3{
+      height: auto;
+      text-align: center;
+      color:#0a0a0a
+    }
   .hero-section .hero-row .hero-content button{
     align-self: center;
     display: inline-flex;
@@ -250,11 +275,21 @@ color: #454343E1;
 
   }
 
+  .hero-section .hero-row .hero-img img{
+  width: auto;
+  height: 50px;
+  }
   .hero-section .hero-row .hero-content {
     max-width: 100%;
     margin: 5px 20px;
     height: auto;
     text-align: center;
+  }
+  .hero-section .hero-row .hero-content h3{
+    margin: -10px 20px 10px 20px ;
+    height: auto;
+    text-align: center;
+    color:#0a0a0a
   }
   .hero-section .hero-row .hero-content button{
     align-self: center;
@@ -264,19 +299,14 @@ color: #454343E1;
   }
 
   .hero-section .hero-row .hero-img {
-    flex: 2;
-    display: 'flex';
-    flex-direction: row-reverse;
-    align-items: 'center';
-    justify-content: 'center';
-    height: "auto";
-    position: "relative";
-    padding: 5;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .hero-section .hero-row .hero-img img{
-    width: 100%;
+    width: 85%;
     height: auto;
-    overflow: hidden;
   }
 }
 
