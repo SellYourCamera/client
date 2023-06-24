@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import './WhyTrustUs.css';
 import Button from '@mui/material/Button';
 
 const WhyTrustUs = ({ isModalOpen, setIsModalOpen }) => {
     const handleCallRequest = () => {
-        setIsModalOpen(true);
-      }
+        setIsModalOpen(true);}
 
     return (
-
+        <div className='trust-section'>
         <div className='trust-row'>
             <div className='col-2'>
-                <img src={require("../assets/img/handshake.png")} />
+                <img src={require("../assets/img/handshake.png")} alt='sellyourcamera'/>
             </div>
             <div className='col-1'>
                 <div className='heading'> <h2>At SYC, we have built a strong reputation as a trusted platform for buying and selling cameras.</h2></div>
@@ -30,11 +28,15 @@ const WhyTrustUs = ({ isModalOpen, setIsModalOpen }) => {
                             padding: '0.6rem 2.5rem',
                             backgroundColor:'#fafafa',
                             color:"#1876d3",
+                            margin:"0px",
+                            boxShadow:"none",
                             fontWeight:550,
+                            borderRadius:0,
                             "&:hover": {
                                 border: "1.5px solid #fafafa",
                                 color: '#fafafa',
-                                backgroundColor: 'transparent'
+                                backgroundColor: 'transparent',
+                                boxShadow:'none',
                               },
                           }}
                        
@@ -42,6 +44,7 @@ const WhyTrustUs = ({ isModalOpen, setIsModalOpen }) => {
                     </Button>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

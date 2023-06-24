@@ -99,9 +99,6 @@
 
 
 
-
-
-
 import React from 'react';
 import Button from '@mui/material/Button';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
@@ -131,9 +128,15 @@ const Hero = ({ isModalOpen, setIsModalOpen }) => {
            onClick={handleCallRequest}
              variant="contained"
              color="primary"
+             
              sx={{
                fontSize: '1rem',
                padding: '0.5rem 1rem',
+               borderRadius:'0rem',
+               boxShadow:'none',
+               '&:hover':{
+                boxShadow:"none"
+               }
                
              }}
            >
@@ -147,7 +150,12 @@ const Hero = ({ isModalOpen, setIsModalOpen }) => {
              sx={{
                fontSize: '1rem',
                padding: '0.5rem 1rem',
-               marginLeft:'20px'
+               marginLeft:'20px',
+               borderRadius:'0rem',
+               boxShadow:'none',
+               '&:hover':{
+                boxShadow:"none"
+               }
              }}
            > Make Call
            </Button>

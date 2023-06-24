@@ -1,4 +1,3 @@
-
 :root {
   --offset: 6px;
 }
@@ -56,67 +55,78 @@
 
 
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1000px) {
 
-.hero-section {
-  
-  align-items: center;
-  justify-content: 'center';
-  min-height: '80vh';
-  width: 100%;
+  .hero-section {
 
-}
-.hero-section .hero-video {
-  max-width: fit-content;
-  width: 100%;
-}
+    align-items: center;
+    justify-content: 'center';
+    min-height: '80vh';
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-.hero-section .hero-row {
-  display: flex;
-  flex-direction: row;
-  padding: 4rem 4rem;
-  
-}
 
-.hero-section .hero-row .hero-content {
- 
-  margin: 50px 80px 0px 20px;
-  width: 40%;
-  max-width: 40%;
-  text-align: start;
- 
-}
-.hero-section .hero-row .hero-content h3{
-  text-align: start;
- 
-}
-
-.hero-section .hero-row .hero-content button{
-  align-self: center;
-  display: inline-flex;
-  margin: 5px ;
-}
-.hero-section .hero-row .hero-img{
-  max-width: 60%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-.hero-section .hero-row .hero-img img{
-  width: 80%;
-
- margin-bottom: 100px;
-
-}
-.hero-section .hero-row .hero-content h1{
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
   }
-.hero-section .hero-row .hero-content h3{
-font-size: 1.5rem;
-margin-bottom: 1rem;
-color: #454343E1;
-}
+
+  .hero-section .hero-video {
+    max-width: fit-content;
+    width: 100%;
+  }
+
+  .hero-section .hero-row {
+    display: flex;
+    flex-direction: row;
+    padding: 4rem 4rem 0rem 4rem;
+    width: 100%;
+    max-width: 1580px;
+
+  }
+
+  .hero-section .hero-row .hero-content {
+
+    margin: 50px 80px 0px 80px;
+    width: 40%;
+    max-width: 40%;
+    text-align: start;
+
+  }
+
+  .hero-section .hero-row .hero-content h3 {
+    text-align: start;
+
+  }
+
+  .hero-section .hero-row .hero-content button {
+    align-self: center;
+    display: inline-flex;
+    margin: 5px;
+  }
+
+  .hero-section .hero-row .hero-img {
+    max-width: 60%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .hero-section .hero-row .hero-img img {
+    width: 80%;
+
+    margin-bottom: 100px;
+
+  }
+
+  .hero-section .hero-row .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section .hero-row .hero-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #454343E1;
+  }
 }
 
 
@@ -124,12 +134,13 @@ color: #454343E1;
 @media (min-width: 576px) and (max-width: 767.98px) {
 
   .hero-section {
-   
+
     align-items: center;
     justify-content: 'center';
     min-height: '80vh';
 
   }
+
   .hero-section .hero-video {
     max-width: fit-content;
     width: 100%;
@@ -146,15 +157,16 @@ color: #454343E1;
     max-width: 100%;
     margin: 5px 20px;
     height: auto;
-   
-  }
-  .hero-section .hero-row .hero-content h3{
-    margin: -10px 0px 20px 0px;
-float: left;
-    color:#0a0a0a
+
   }
 
-  .hero-section .hero-row .hero-content button{
+  .hero-section .hero-row .hero-content h3 {
+    margin: -10px 0px 20px 0px;
+    float: left;
+    color: #0a0a0a
+  }
+
+  .hero-section .hero-row .hero-content button {
     align-self: center;
     display: inline-flex;
 
@@ -170,9 +182,10 @@ float: left;
     position: "relative";
     padding: 5;
   }
-  .hero-section .hero-row .hero-img img{
+
+  .hero-section .hero-row .hero-img img {
     width: 100%;
-   
+
     height: auto;
     overflow: hidden;
   }
@@ -187,14 +200,16 @@ float: left;
 
 
 @media (max-width: 575.98px) {
+
   /* CSS rules for extra small devices (phones) */
   .hero-section {
-   
+
     align-items: center;
     justify-content: 'center';
     min-height: '80vh';
 
   }
+
   .hero-section .hero-video {
     max-width: fit-content;
     width: 100%;
@@ -214,24 +229,27 @@ float: left;
     text-align: center;
   }
 
-  .hero-section .hero-row .hero-img img{
+  .hero-section .hero-row .hero-img img {
     width: auto;
-    }
-    .hero-section .hero-row .hero-content {
-      max-width: 100%;
-      height: auto;
-      text-align: center;
-    }
-    .hero-section .hero-row .hero-content h3{
-      height: auto;
-      text-align: center;
-      color:#0a0a0a
-    }
-  .hero-section .hero-row .hero-content button{
+  }
+
+  .hero-section .hero-row .hero-content {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-section .hero-row .hero-content h3 {
+    height: auto;
+    text-align: center;
+    color: #0a0a0a
+  }
+
+  .hero-section .hero-row .hero-content button {
     align-self: center;
     display: inline-flex;
     margin: 10px;
-  
+
   }
 
   .hero-section .hero-row .hero-img {
@@ -244,7 +262,8 @@ float: left;
     position: "relative";
     padding: 5;
   }
-  .hero-section .hero-row .hero-img img{
+
+  .hero-section .hero-row .hero-img img {
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -255,14 +274,16 @@ float: left;
 
 
 @media (min-width: 768px) and (max-width: 999px) {
+
   /* CSS rules for medium devices (laptops and small desktops) */
   .hero-section {
-   
+
     align-items: center;
     justify-content: 'center';
     min-height: '80vh';
 
   }
+
   .hero-section .hero-video {
     max-width: fit-content;
     width: 100%;
@@ -275,27 +296,30 @@ float: left;
 
   }
 
-  .hero-section .hero-row .hero-img img{
-  width: auto;
-  height: 50px;
+  .hero-section .hero-row .hero-img img {
+    width: auto;
+    height: 50px;
   }
+
   .hero-section .hero-row .hero-content {
     max-width: 100%;
     margin: 5px 20px;
     height: auto;
     text-align: center;
   }
-  .hero-section .hero-row .hero-content h3{
-    margin: -10px 20px 10px 20px ;
+
+  .hero-section .hero-row .hero-content h3 {
+    margin: -10px 20px 10px 20px;
     height: auto;
     text-align: center;
-    color:#0a0a0a
+    color: #0a0a0a
   }
-  .hero-section .hero-row .hero-content button{
+
+  .hero-section .hero-row .hero-content button {
     align-self: center;
     display: inline-flex;
     margin: 10px;
-  
+
   }
 
   .hero-section .hero-row .hero-img {
@@ -304,9 +328,9 @@ float: left;
     justify-content: center;
     align-items: center;
   }
-  .hero-section .hero-row .hero-img img{
+
+  .hero-section .hero-row .hero-img img {
     width: 85%;
     height: auto;
   }
 }
-

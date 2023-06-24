@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react"
 import Hero from "../components/hero/Hero";
-import Slider from "../components/sliders/Slider"
+// import Slider from "../components/sliders/Slider"
 //import HeroSliderThree from "../../components/sliders/HeroSliderThree";
-import SellSection from "./Sell";
+// import SellSection from "./Sell";
 import Modal from "../components/modal/homeModal";
 import FAQ from '../components/Faq';
 import Category from "./Category";
 import DSLRBrand from "./DslrBrand";
-import VideoHero from "../components/hero/videohero";
+// import VideoHero from "../components/hero/videohero";
 import WhyTrustUs from "./WhyTrustUs";
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,9 +23,9 @@ const Home = () => {
         };
     }, []);
  
-    const handleRequest = () =>{
-        setIsModalOpen(true);
-    }
+    // const handleRequest = () =>{
+    //     setIsModalOpen(true);
+    // }
 
 
     //alert

@@ -114,10 +114,10 @@ import './Category.css'
 const Category = () => {
 
     return (
-
+        <div className='cat_section'>
         <div className='cat_row'>
             <div className='col-1'>
-                <img src={require("../assets/img/Salesman pointing.png")} />
+                <img src={require("../assets/img/Salesman pointing.png")} alt='syc'/>
             </div>
             <div className='col-2'>
                 <h2>Here We Comes With Different Category.</h2>
@@ -130,23 +130,24 @@ const Category = () => {
              <h2>Ready to sell your old camera?</h2>
                 <Link style={{ textDecoration: "none" }} to={"/DSLR"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/DSLR.jpg")} />
+                        <img src={require("../assets/img/DSLR.jpg")} alt='dslr camera' />
                         <h3>DSLR Camera</h3>
                     </div>
                 </Link>
                 <Link style={{ textDecoration: "none" }} to={"/Action-camera"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/ActionCamera.jpg")} />
+                        <img src={require("../assets/img/ActionCamera.jpg")} alt='action camera'/>
                         <h3>Action Camera</h3>
                     </div>
                 </Link>
                 <Link style={{ textDecoration: "none" }} to={"/video-camera"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/VideoCamera.jpg")} />
+                        <img src={require("../assets/img/VideoCamera.jpg")} alt='video camera' />
                         <h3>Video Camera</h3>
                     </div>
                 </Link>
             </div>
+        </div>
         </div>
     )
 }

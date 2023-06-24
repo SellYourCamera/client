@@ -30,7 +30,7 @@
     
     
     .trust-row .col-1 {
-        padding: 5px;
+        padding: 4px;
         background-color: #1876d3;
         margin: 50px;
         width: 55%;
@@ -59,11 +59,14 @@
     
     .trust-row .col-1 .heading,
     .content {
+       
+        margin: -5px 0px;
+        padding: 0px;
         color: #fafafa;
     }
     
     .trust-row .col-1 .component {
-        margin: 10px;
+        margin: 20px;
         width: 100%;
     
     }
@@ -80,15 +83,24 @@
 
 
 @media only screen and (min-width:1100.1px ){
+    .trust-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: center; 
+        width: 100%;
+        margin: 40px 0px;
+        padding: 0px;
+    }
 .trust-row {
-    margin: 50px 0px;
-    width: 100%;
+    max-width: 1500px;
+    justify-self: center;
     height: 500px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     overflow: hidden;
     background-color: #1876d3;
+    
 
 }
 
@@ -96,7 +108,7 @@
     padding: 50px 80px;
     background-color: #fafafa;
     margin: 0px;
-    width: 50%;
+    width: 40%;
     height: auto;
     display: flex;
     align-items: center;
@@ -104,31 +116,32 @@
 }
 
 .trust-row .col-2 img {
-    height: 110%;
+    height: 115%;
     width: auto;
 }
 
 .trust-row .col-1 {
-    padding: 50px 80px;
+  
+    padding:2.5%;
     background-color: #1876d3;
-    margin: 50px;
-    width: 50%;
+    margin:30px;
+    width: 60%;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
 .trust-row .col-1 .heading,
 .content {
     color: #fafafa;
+    margin: 0px;
+  
 }
 
 .trust-row .col-1 .component {
-    margin: 10px;
+    margin-top: 20px;
     width: 100%;
-
 }
 
 .trust-row .col-1 .component button {
@@ -143,7 +156,7 @@
 
 @media only screen and (max-width:768px) {
     .trust-row {
-        margin: 50px 0px;
+        margin: 50px 0px 0px;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -163,11 +176,11 @@
         justify-content: center;
         align-items: center;
         padding: 20px 5px;
+        
     }
 
     .trust-row .col-2 img {
-       width: fit-content;
-      height: 400px;
+       width: 70%;
     }
 
     .trust-row .col-1 {
@@ -184,20 +197,17 @@
 
     .trust-row .col-1 .heading,
     .content {
+        margin: -5px 0px;
         color: #fafafa;
     }
 
     .trust-row .col-1 .component {
-        margin: 10px;
+        margin-top: 20px;
         width: 100%;
 
     }
 
     .trust-row .col-1 .component button {
-        font-size: '1rem';
-        padding: '0.5rem 1rem';
-        background-color: '#fafafa';
-        color: '#1876d3';
-        font-weight: '500';
+        margin: 0px;
     }
 }
