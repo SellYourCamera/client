@@ -1,6 +1,10 @@
 import React from "react";
 import "./Footer.scss";
 import { useEffect } from "react";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 const Footer = () => {
 
@@ -15,28 +19,15 @@ const Footer = () => {
     };
   }, []);
   return (
-    <div className="footer-section">
       <div className="footer">
         <div className="top">
           <div className="item">
             <h1>Categories</h1>
-          <span>Women</span>
-          <span>Men</span>
-          <span>Shoes</span>
-          <span>Accessories</span>
-          <span>New Arrivals</span>
-
-            {/* <div style={{display:'flex',flexDirection:'column'}} class="powr-social-feed" id="ea29545d_1687576896"></div>
-            {/* <div className="embedsocial-hashtag" data-ref="6444b61ee00ac70b7a073d0be93f092c51dc4c5d">
-          <a
-            className="feed-powered-by-es feed-powered-by-es-feed-new"
-            href="https://embedsocial.com/social-media-aggregator/"
-            target="_blank"
-            title="Widget by EmbedSocial"
-          >
-            Widget by EmbedSocial<span>→</span>
-          </a>
-         </div> */} 
+            <span>Women</span>
+            <span>Men</span>
+            <span>Shoes</span>
+            <span>Accessories</span>
+            <span>New Arrivals</span>
           </div>
           <div className="item">
             <h1>Links</h1>
@@ -46,6 +37,7 @@ const Footer = () => {
             <span>Compare</span>
             <span>Cookies</span>
           </div>
+
           <div className="item">
             <h1>About</h1>
             <span>
@@ -60,11 +52,24 @@ const Footer = () => {
           <div className="item">
             <h1>Contact</h1>
             <span>
-              Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit
-              amet conse ctetur adipisicing elit, seddo eiusmod tempor incididunt
-              ut labore etdolore.
+            If you prefer to speak with a representative directly,
+             you can contact our customer support team by phone.
+              Please call our dedicated support line. 
+              Our knowledgeable staff will be available during our
+               business hours to address your inquiries,
+                provide assistance, and answer any questions you may have.
             </span>
+          </div>
+          <div className="item-instagram">
+          <h1>Links</h1>
+            <span>Pages</span>
+            <span>Stores</span>
+            <span>Compare</span>
+            <span>Cookies</span>
+            <span>Cookies</span>
+            <span>Cookies</span>
+            <span>Cookies</span>
+            <span>Cookies</span>
           </div>
         </div>
 
@@ -77,14 +82,20 @@ const Footer = () => {
             </span>
           </div>
           <div className="right">
-            {/* <img src="/img/payment.png" alt="payment" /> */}
+            {/* <img src={require("../../assets/img/linkedin.png")} alt="linkedin" />
+            <img src={require("../../assets/img/instagram.png")}alt="instagram" />
+            <img src={require("../../assets/img/linkedin.png")} alt="linkedin" />
+            <img src={require("../../assets/img/instagram.png")}alt="instagram" />
+            <img src={require("../../assets/img/linkedin.png")} alt="linkedin" /> */}
+            <InstagramIcon sx={{scale:'1.5',mx:1.5, color:'#fafafa'}}/>
+            <FacebookIcon sx={{scale:'1.5',mx:1.5,color:'#fafafa'}}/>
+            <LinkedInIcon sx={{scale:'1.5',mx:1.5,color:'#fafafa'}}/>
+            <TwitterIcon sx={{scale:'1.5',mx:1.5,color:'#fafafa'}}/>
+           
           </div>
         </div>
       </div>
-    </div>
   );
 };
-
-//https://codepen.io/baahubali92/pen/KbRBxJ
 
 export default Footer;

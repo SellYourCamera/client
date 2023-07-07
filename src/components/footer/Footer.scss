@@ -1,22 +1,43 @@
 @media only screen and (min-width:998px) {
-  .footer-section {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    background-color: #1876d2;
-  }
 
   .footer {
     max-width: 1500px;
     background-color: #fafafa;
     border-top: 1px solid #fafafa;
-    
+
 
     .top {
-      padding: 100px 200px 20px 200px;
+      padding: 100px 100px 20px 100px;
       display: flex;
+      flex-direction: row;
       gap: 50px;
 
+
+      .item-instagram{
+        flex: 1;
+        gap: 10px;
+        text-align: justify;
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 30%;
+        h1{
+          width: 100%;
+          align-self:center;
+          font-size: 18px;
+          font-weight: 500;
+          color: #0c0c0c;
+          margin: 0px;
+          padding: 0px;
+        }
+        span{
+          width: 40%;
+          margin: 0px;
+          padding: 0px;
+          border:2px solid #1876d2;
+        }
+
+      }
       .item {
         flex: 1;
         display: flex;
@@ -29,30 +50,33 @@
           font-size: 18px;
           font-weight: 500;
           color: #0c0c0c;
+         
         }
 
         span {
           color: #0c0c0c;
+       
         }
       }
     }
 
     .bottom {
-   
+
       padding: 20px 10px;
       background-color: #1876d2;
       margin: 0px;
+      height: 40px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-direction:row;
 
       .left {
-       padding: 0px 80px;
+        width: 50%;
+        padding: 0px 80px;
         display: flex;
         align-items: center;
 
         .logo {
-          font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'Trebuchet MS', sans-serif;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'Trebuchet MS', sans-serif;
           color: #fafafa;
           font-weight: bold;
           font-size: 24px;
@@ -66,15 +90,20 @@
       }
 
       .right {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 80px;
+        justify-content: end;
 
-        .icons {
-          display: flex;
-          flex-wrap: wrap;
-          img{
-            height: 50px;
+        display: flex;
+      
+          img {
+            margin: 0px 8px;
             width: auto;
-
-          }
+            height: 25px;
+           
         }
       }
     }
@@ -152,5 +181,4 @@
       }
     }
   }
-
 }

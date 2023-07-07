@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -18,10 +18,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-import Alert from '@mui/material/Alert';
+
 import { green, red } from '@mui/material/colors';
-import Stack from '@mui/material/Stack';
-import { MuiTelInput, matchIsValidTel } from 'mui-tel-input';
+import { MuiTelInput } from 'mui-tel-input';
 import axios from 'axios';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -55,23 +54,10 @@ const Modal = ({ setIsModalOpen }) => {
         return () => {
             clearTimeout(timer);
         };
-    }, [showAlert,apiResponseStatus,emailSendStatus,emailMsg]);
+    }, [showAlert, apiResponseStatus, emailSendStatus, emailMsg]);
 
     const handleRequestCall = async (event) => {
         event.preventDefault();
-
-        const emailSend = await emailjs.send('service_xh3dsun', 'template_9w4llwc', {
-            user_name: username,
-            user_email: email,
-            phone: phone,
-            brand: brand
-        }, 'Xr7TiVGL2mxbnjbe7')
-            .then((result) => {
-                console.log('Email sent successfully', result.text);
-                setEmailSendStatus(200);
-            }, (error) => {
-                console.log('Failed to send email', error);
-            });
 
         const userDataToSend = {
             user_name: username,
@@ -84,7 +70,20 @@ const Modal = ({ setIsModalOpen }) => {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
             if (apiResponse.status === 200) {
                 setApiResponseStatus(200);
-                console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus);
+                const emailSend = await emailjs.send('service_xh3dsun', 'template_9w4llwc', {
+                    user_name: username,
+                    user_email: email,
+                    phone: phone,
+                    brand: brand
+                }, 'Xr7TiVGL2mxbnjbe7')
+                    .then((result) => {
+                        console.log('Email sent successfully', result.text);
+                        setEmailSendStatus(200);
+                    }, (error) => {
+                        console.log('Failed to send email', error);
+                    });
+
+                console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus,emailSend);
                 setEmailMsg('Thank You For Call Request. We will connect you soon.');
             }
             if (emailSendStatus === 200 && apiResponseStatus === 200) {
@@ -112,7 +111,7 @@ const Modal = ({ setIsModalOpen }) => {
                 };
             }
 
-         
+
         } catch (error) {
             console.log(error);
         }
@@ -131,7 +130,7 @@ const Modal = ({ setIsModalOpen }) => {
     return (
         <div className="home-modal-box">
             {showAlert && (
-                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor:  emailSendStatus === 200 ? successColor : errorColor }}>
+                <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor: emailSendStatus === 200 ? successColor : errorColor }}>
                     <div className="alert-content">
                         {emailMsg}
                     </div>
@@ -251,7 +250,7 @@ const Modal = ({ setIsModalOpen }) => {
                                         type="submit"
                                         fullWidth
                                         variant="contained"
-                                        sx={{ mt: 3, mb: 2 }}
+                                        sx={{ mt: 3, mb: 2,boxShadow:'none',borderRadius:0 }}
                                     >
                                         Request Call
                                     </Button>
@@ -273,14 +272,14 @@ const Modal = ({ setIsModalOpen }) => {
                                         fullWidth
                                         variant="contained"
                                         onClick={handleMakeCall}
-                                        sx={{ mt: 1, mb: 2 }}
+                                        sx={{ mt: 1, mb: 2,boxShadow:'none',borderRadius:0 }}
                                     >
                                         Make Call
                                     </Button>
                                 </Box>
 
                             </Box>
-                       
+
                         </Container>
                     </ThemeProvider>
 

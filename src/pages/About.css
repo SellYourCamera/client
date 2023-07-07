@@ -1,0 +1,124 @@
+.about-section{
+    display: flex;
+    margin: 0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.about-section .about{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.about-section .about .about-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 99%; 
+    overflow: hidden;
+}
+.about-section .about .about-row .col{
+    padding: 30px 80px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+
+}
+
+.about-section .about .about-row .col .content h1,h2{
+    color: #0c0c0c;
+    text-align: start;
+  
+
+}
+.about-section .about .about-row .col .content h3{
+    color: #0a0a0a;
+    text-align: start;
+}
+.about-section .about .about-row .col .content ul{
+   color: #1876d2;
+   list-style: none;
+}
+ul li::before {
+    content: "\2022";
+    color: #1876d2;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.5em;
+  }
+.about-section .about .about-row .col .content ul>li{
+    color: #0a0a0a;
+    text-align: start;
+    
+}
+.about-section .about .about-row .col .content span{
+    color: #1876d2;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+.about-section .about .about-row .col .content p{
+    color: #0a0a0a;
+    text-align: start;
+}
+.about-section .about .about-row .col img{
+    width: 40%;
+    height: auto;
+}
+
+
+/* contact section */
+
+.about-section .about .about-row .col1  {
+    color: #0c0c0c;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 33%;
+    margin: 0%;
+    padding: 0%;
+    /* background-color: #1876d2; */
+}
+.about-section .about .about-row .col1 .content1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-section .about .about-row .col1 .content1 h1{
+    width: 100%;
+    text-align: center;
+    margin: 12px auto;
+    color: #0c0c0c;
+}
+.about-section .about .about-row .col1 .content1 h2{
+    width: 100%;
+    text-align: center;
+    margin: 12px auto;
+    color: #0c0c0c;
+}
+
+.about-section .about .about-row .col1 .content1 a{
+    width: 100%;
+    text-align: center;
+    margin: 12px auto;
+    color: #0c0c0c;
+    text-decoration: none;
+}
+.about-section .about .about-row .col1 .content1 a:hover{
+    text-align: center;
+    margin: 10px auto;
+    color: #1876d2;
+    scale: 1.1;
+}

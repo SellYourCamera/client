@@ -26,16 +26,17 @@ const WhyTrustUs = ({ isModalOpen, setIsModalOpen }) => {
                         sx={{
                             fontSize: '1rem',
                             padding: '0.6rem 2.5rem',
-                            backgroundColor:'#fafafa',
-                            color:"#1876d3",
+                            border: "1.5px solid #fafafa",
+                            color:"#fafafa",
                             margin:"0px",
                             boxShadow:"none",
                             fontWeight:550,
                             borderRadius:0,
+                            backgroundColor: 'transparent',
                             "&:hover": {
-                                border: "1.5px solid #fafafa",
-                                color: '#fafafa',
-                                backgroundColor: 'transparent',
+                                backgroundColor:'#fafafa',
+                                color: '#1876d3',
+                                
                                 boxShadow:'none',
                               },
                           }}
