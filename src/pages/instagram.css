@@ -1,0 +1,30 @@
+/* instagram.css */
+.instagram-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insta_row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.insta_post {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.insta_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.insta_content img {
+  height: auto;
+  width: 80px;
+  cursor: pointer;
+}

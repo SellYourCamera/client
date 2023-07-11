@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    max-width: 1500px;
 }
 .about-section .about{
     margin: 0;
@@ -121,4 +122,42 @@ ul li::before {
     margin: 10px auto;
     color: #1876d2;
     scale: 1.1;
+}
+
+@media only screen and (max-width:'768px') {
+    .about-section{
+        display: flex;
+        margin: 0;
+        padding:0;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border: 12px solid red;
+    }
+    .about-section .about{
+        margin: 0;
+        padding:0;
+        width: 100%;
+        max-width: 1500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about-section .about .about-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 99%; 
+        overflow: hidden;
+    } 
+    .about-section .about .about-row .col{
+        padding: 30px 80px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 450px;
+    
+    }
 }

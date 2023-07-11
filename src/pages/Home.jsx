@@ -9,9 +9,12 @@ import Category from "./Category";
 import DSLRBrand from "./DslrBrand";
 // import VideoHero from "../components/hero/videohero";
 import WhyTrustUs from "./WhyTrustUs";
+
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     useEffect(() => {
+
+
         // Trigger the modal after 3 seconds
         const timeoutId = setTimeout(() => {
             setIsModalOpen(true);

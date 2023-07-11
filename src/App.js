@@ -22,6 +22,7 @@ import SignIn from "./components/Authentication/signin";
 import Modal from "./components/modal/homeModal";
 import ActionCamera from "./pages/ActionCamera";
 import VideoCamera from "./pages/VideoCamera";
+import InstagramFeed from "./pages/Instagram";
 
 
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/modal" element={<Modal />}  />
         <Route path="/action-camera" element={<ActionCamera/>} />
         <Route path="/video-camera" element={<VideoCamera/>} />
+        <Route path="/instagramfeed" element={<InstagramFeed />} />
         
 
       </Routes>

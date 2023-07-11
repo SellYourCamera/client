@@ -5,6 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramFeed from "../../pages/Instagram";
 
 const Footer = () => {
 
@@ -60,17 +61,19 @@ const Footer = () => {
                 provide assistance, and answer any questions you may have.
             </span>
           </div>
-          <div className="item-instagram">
-          <h1>Links</h1>
-            <span>Pages</span>
+          {/* <div className="item-instagram">
+          <h1>Instagram Feeds</h1>
+            {/* <span>Pages</span>
             <span>Stores</span>
             <span>Compare</span>
             <span>Cookies</span>
             <span>Cookies</span>
             <span>Cookies</span>
             <span>Cookies</span>
-            <span>Cookies</span>
-          </div>
+            <span>Cookies</span> 
+
+            <InstagramFeed/>
+          </div> */}
         </div>
 
         <div className="bottom">
