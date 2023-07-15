@@ -46,35 +46,21 @@ const ActionCamera = () => {
             {brandName}
             <ul>
               <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={()=>handleBrandClick("canon")}>
-                  <img src={require("../assets/img/canon.jpeg")} alt="canon" />
+                <button style={{background:'none', border:'none'}} onClick={()=>handleBrandClick("DJI")}>
+                  <img src={require("../assets/img/cameras/Action Camera/dji.webp")} alt="DJI" />
                 </button>
               </li>
               <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('nikon')}>
-                  <img src={require("../assets/img/nikon.jpeg")} alt="nikon" />
+                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('GOPRO')}>
+                  <img src={require("../assets/img/cameras/Action Camera/gopro.webp")} alt="GOPRO" />
                 </button>
               </li>
               <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('panasonic')}>
-                  <img src={require("../assets/img/panasonic.jpeg")} alt="panasonic" />
+                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('INSTA360')}>
+                  <img src={require("../assets/img/cameras/Action Camera/insta360.webp")} alt="INSTA360" />
                 </button>
               </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('sony')}>
-                  <img src={require("../assets/img/sony.jpeg")} alt="sony" />
-                </button>
-              </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('fujifilm')}>
-                  <img src={require("../assets/img/fujifilm.jpeg")} alt="fujifilm" />
-                </button>
-              </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('black magic design')}>
-                  <img src={require("../assets/img/Blackmagic.jpeg")} alt="balck magic design" />
-                </button>
-              </li>
+             
             </ul>
           </div>
         </div>

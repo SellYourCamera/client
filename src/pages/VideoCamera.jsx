@@ -49,11 +49,7 @@ const VideoCamera = () => {
                   <img src={require("../assets/img/canon.jpeg")} alt="canon" />
                 </button>
               </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('nikon')}>
-                  <img src={require("../assets/img/nikon.jpeg")} alt="nikon" />
-                </button>
-              </li>
+             
               <li className="brandimg">
                 <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('panasonic')}>
                   <img src={require("../assets/img/panasonic.jpeg")} alt="panasonic" />
@@ -64,16 +60,7 @@ const VideoCamera = () => {
                   <img src={require("../assets/img/sony.jpeg")} alt="sony" />
                 </button>
               </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('fujifilm')}>
-                  <img src={require("../assets/img/fujifilm.jpeg")} alt="fujifilm" />
-                </button>
-              </li>
-              <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('black magic design')}>
-                  <img src={require("../assets/img/Blackmagic.jpeg")} alt="balck magic design" />
-                </button>
-              </li>
+             
             </ul>
           </div>
         </div>

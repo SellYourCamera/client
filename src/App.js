@@ -23,12 +23,27 @@ import Modal from "./components/modal/homeModal";
 import ActionCamera from "./pages/ActionCamera";
 import VideoCamera from "./pages/VideoCamera";
 import InstagramFeed from "./pages/Instagram";
+import { useState, useEffect } from 'react';
+import Preloader from "./pages/preloader";
 
 
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
   return (
+
     <div>
+    {isLoading ? (
+      <Preloader />
+    ) : (
+      /* Render your app content when not loading */
+      <div>
       <Navbar />
       <Routes>
 
@@ -57,6 +72,10 @@ function App() {
       </Routes>
       <Footer />
     </div>
+    )}
+  </div>
+
+    
   )
 };
 export default App;

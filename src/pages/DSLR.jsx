@@ -66,13 +66,13 @@ const DSLR = () => {
                 </button>
               </li>
               <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('fujifilm')}>
+                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('fuji film')}>
                   <img src={require("../assets/img/fujifilm.jpeg")} alt="fujifilm" />
                 </button>
               </li>
               <li className="brandimg">
-                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('black magic design')}>
-                  <img src={require("../assets/img/Blackmagic.jpeg")} alt="balck magic design" />
+                <button style={{background:'none', border:'none'}} onClick={() => handleBrandClick('black magic')}>
+                  <img src={require("../assets/img/Blackmagic.jpeg")} alt="balck magic" />
                 </button>
               </li>
             </ul>
