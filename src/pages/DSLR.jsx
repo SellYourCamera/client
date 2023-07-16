@@ -9,6 +9,7 @@ const DSLR = () => {
   const navigate = useNavigate();
   const serachData='';
   const filterData='';
+  const [searchKey,setSearchKey]=useState('');
   const category='DSLR Camera';
   console.log('categiory',category);
   const [brandName, setBrandName] = useState("");
@@ -17,16 +18,14 @@ const DSLR = () => {
     navigate('/single-product', { state: { brandName: name,category: category } });
   };
 
-  // useEffect(()=>{
-  //     data= axios.get(`${REACT_APP_Backend_URL}/api/searchdata`);
-  //     data
-  // })
-  const handlesSearchChange = (e) =>({
+  useEffect(()=>{
+     var data= axios.get(`${process.env.REACT_APP_Backend_URL}/api/search/${searchKey}`);
+      console.log(searchKey,data)
+  },[searchKey]);
 
-   
-
-  })
-
+  const handleInputChange = (event) => {
+    setSearchKey(event.target.value);
+  };
   
 
 
@@ -36,7 +35,9 @@ const DSLR = () => {
         <div className="col-left">
           <div className="brandcontainer">
             <h2 className="underline-small">Sell Your Old DSLR Camera on CamMart</h2>
-            <form><input type="text" placeholder="Search Brand" onChange={handlesSearchChange} /></form>
+            <form><input type="text" value={searchKey}
+        placeholder="Search Brand"
+        onChange={handleInputChange} /></form>
             {/* <div className="search-result">
               <div>A</div>
               <div>B</div>

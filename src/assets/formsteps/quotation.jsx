@@ -43,7 +43,7 @@ const Quotation = () => {
                     <div className="quotation-section">
                         <div className="img-section">
                             {productData.map((product) => (
-                                <img src={require(`../img/canon/${product.image}.png`)} alt="canon" />
+                                            <img src={require(`../img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
                             ))}
                         </div>
 
@@ -52,7 +52,7 @@ const Quotation = () => {
                             <div key="content" className="content-section" >
                                 <h2 >{product.brand}</h2>
                                 <p >{product.product_model}</p>
-                                <h1>$ 16000</h1>
+                                <h1> &#x20B9; {product.price}</h1>
 
                                 <div onClick={handleOpen} className="report-section">See Device Report</div>
                                 <div className="feature-section"><img src={require("../img/quotation-feature.png")} alt="feature" /></div>
@@ -68,8 +68,8 @@ const Quotation = () => {
                     {productData.map((product) => (
 
                         <div className="imgsection" key={product.id} >
-                            <img src={require(`../img/canon/${product.image}.png`)} alt="canon" />
-                            <div key="content" className="content-section" >
+                               <img src={require(`../img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
+                              <div key="content" className="content-section" >
                                 <h3 >{product.brand}</h3>
                                 <p >{product.product_model}</p>
                             </div>
@@ -123,8 +123,8 @@ const Quotation = () => {
                         {productData.map((product) => (
 
                             <div className="imgsection" key={product.id}>
-                                <img src={require(`../img/canon/${product.image}.png`)} alt="canon" />
-                                <div key="content" className="content-section" >
+                                  <img src={require(`../img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
+                                    <div key="content" className="content-section" >
                                     <h2 >{product.brand}</h2>
                                     <p>{product.product_model}</p>
                                 </div>

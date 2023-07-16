@@ -53,8 +53,8 @@ const handleModelClick = (product) => {
             <div className="row">
               <div className="col-1">
                 <div className="content">
-                  <img src={require(`../assets/img/canon/${product.image}.png`)} alt="canon" />
-                </div>
+                <img src={require(`../assets/img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
+              </div>
               </div>
               <div className="col-2">
                 <h2>{product.brand} DSLR {product.product_model}</h2>

@@ -221,7 +221,7 @@ const ProductDetails = () => {
           {productData.map((product) => (
 
             <div key={product._id} className="imgsection">
-               <img src={require(`../assets/img/canon/${product.image}.png`)} alt="canon" />
+            <img src={require(`../assets/img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
              <div className="content-section" >
              <h3>{product.brand}</h3>
               <p>{product.product_model}</p>

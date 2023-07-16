@@ -3,7 +3,7 @@ import './preloader.css';
 
 const Preloader = () => {
   useEffect(() => {
-    document.title += ' (OGBZ)';
+    document.title += ' (SYC)';
   }, []);
 
   return (
