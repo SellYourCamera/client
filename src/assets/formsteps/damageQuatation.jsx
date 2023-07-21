@@ -47,8 +47,8 @@ const Quotation = () => {
                     <div className="quotation-section">
                         <div className="img-section">
                             {productData.map((product) => (
-                                <img src={require(`../img/canon/${product.image}.png`)} alt="canon" />
-                            ))}
+                                            <img src={require(`../img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
+                                            ))}
                         </div>
 
                         {productData.map((product) => (
@@ -60,7 +60,7 @@ const Quotation = () => {
                                 <h2>Glad, You are here</h2>
 
                                 <p>Currently, We cannot estimate the value of your device.</p>
-                                <p>Howeever, this is not the end we also buy damege cameras which makes us different.</p>
+                                <p>However, this is not the end we also buy damege cameras which makes us different.</p>
                                 <p> To sell you can call us or fill a form to reuest for call, we contact you as soon as possible.
                                 </p>
                                 <div onClick={handleOpen} className="report-section">See Device Report</div>
@@ -105,7 +105,7 @@ const Quotation = () => {
                     {productData.map((product) => (
 
                         <div className="imgsection" key={product.id} >
-                            <img src={require(`../img/canon/${product.image}.png`)} alt="canon" />
+                               <img src={require(`../img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
                             <div key="content" className="content-section" >
                                 <h3 >{product.brand}</h3>
                                 <p >{product.product_model}</p>

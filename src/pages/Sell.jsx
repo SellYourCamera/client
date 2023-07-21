@@ -25,13 +25,13 @@ const Sell = () => {
         <p className="cam">DSLR</p>
         </div>
     </Link>
-    <Link to="#" target="_self" rel="noreferrer">
+    <Link to="/Action-camera" target="_self" rel="noreferrer">
     <div className="item">
         <img src={ActionCamera} alt="ActionCamera" />
         <p className="cam">Action Camera</p>
     </div>
     </Link>
-    <Link to="#" target="_self" rel="noreferrer">
+    <Link to="/video-camera" target="_self" rel="noreferrer">
     <div className="item">
     <img src={VideoCamera} alt="VideoCamera" />
     <p className="cam">Video Camera</p>
