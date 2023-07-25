@@ -154,7 +154,10 @@
                     }
 
                     h3 {
+                        display: flex;
+                        justify-self: flex-start;
                         color: #000;
+                       
                     }
 
                     li {
@@ -184,6 +187,9 @@
 
                         h3 {
                             color: #1876d3;
+                            display: flex;
+                            justify-self: flex-start;
+                            
                         }
 
                         p {
@@ -354,6 +360,8 @@
                     }
     
                     h3 {
+                        display: flex;
+                        justify-self: flex-start;
                         color: #000;
                     }
     
@@ -383,7 +391,10 @@
                         margin-left: 20px;
     
                         h3 {
+                           
                             color: #1876d3;
+                            display: flex;
+                            justify-self: flex-start;
                         }
     
                         p {

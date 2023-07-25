@@ -110,6 +110,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Category.css'
+import DSLRIMG from "../assets/icons/DSLR.svg";
+import VideoCamera from "../assets/icons/Action Camera.svg";
+import ActionCamera from "../assets/icons/Video Camera.svg";
 
 const Category = () => {
 
@@ -130,19 +133,19 @@ const Category = () => {
              <h2>Ready to sell your old camera?</h2>
                 <Link style={{ textDecoration: "none" }} to={"/DSLR"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/DSLR.jpg")} alt='dslr camera' />
+                        <img src={DSLRIMG} alt='dslr camera' />
                         <h3>DSLR Camera</h3>
                     </div>
                 </Link>
                 <Link style={{ textDecoration: "none" }} to={"/Action-camera"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/ActionCamera.jpg")} alt='action camera'/>
+                        <img src={ActionCamera} alt='action camera'/>
                         <h3>Action Camera</h3>
                     </div>
                 </Link>
                 <Link style={{ textDecoration: "none" }} to={"/video-camera"} target="_self" >
                     <div className='items'>
-                        <img src={require("../assets/img/VideoCamera.jpg")} alt='video camera' />
+                        <img src={VideoCamera} alt='video camera' />
                         <h3>Video Camera</h3>
                     </div>
                 </Link>

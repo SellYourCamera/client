@@ -1,8 +1,8 @@
 import React from "react";
 import Sellimg from "../assets/img/Sellimg.jpg";
-import DSLR from "../assets/img/DSLR.jpg";
-import ActionCamera from "../assets/img/ActionCamera.jpg";
-import VideoCamera from "../assets/img/VideoCamera.jpg";
+import DSLR from "../assets/icons/DSLR.svg";
+import ActionCamera from "../assets/icons/Action Camera.svg";
+import VideoCamera from "../assets/icons/Video Camera.svg";
 import { Link } from 'react-router-dom';
 import SellDSLR from "./DSLR";
 

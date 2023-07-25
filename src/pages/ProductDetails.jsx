@@ -24,9 +24,9 @@ const ProductDetails = () => {
     functionalIssue: "",
     physicalCondition: "",
     additionalLens: "",
-    cameraLens:[],
-    cameraAccessories:[],
-    cameraAge:""
+    cameraLens: [],
+    cameraAccessories: [],
+    cameraAge: ""
   });
 
   const handleChange = (event) => {
@@ -85,7 +85,7 @@ const ProductDetails = () => {
   // };
   //on click continue check 
   const navigate = useNavigate();
-  const handleClick =async (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
     if (checkValidation()) {
       if (
@@ -94,21 +94,21 @@ const ProductDetails = () => {
         productDetailObj.physicalCondition === "Yes"
       ) {
         // toast.info("redirect to last page and Say no to the Cunsumer");
-        const productDataForLens=productData;
-        navigate('/damageQuatation', { state: { productData:productDataForLens, productDetailObj:productDetailObj } });
+        const productDataForLens = productData;
+        navigate('/damageQuatation', { state: { productData: productDataForLens, productDetailObj: productDetailObj } });
 
-      } else if (productDetailObj.additionalLens === "Yes"){
-          const productDataForLens=productData;
-          navigate('/lens', { state: { productData:productDataForLens, productDetailObj:productDetailObj } });
-          console.log(productData);
-      }else  if(productDetailObj.cameraLens.length<1){
-        const productDataForLens=productData;
-        const updatedProductDetailObj = { 
-          ...productDetailObj, 
-          cameraLens: ["No Spare Lens"] 
+      } else if (productDetailObj.additionalLens === "Yes") {
+        const productDataForLens = productData;
+        navigate('/lens', { state: { productData: productDataForLens, productDetailObj: productDetailObj } });
+        console.log(productData);
+      } else if (productDetailObj.cameraLens.length < 1) {
+        const productDataForLens = productData;
+        const updatedProductDetailObj = {
+          ...productDetailObj,
+          cameraLens: ["No Spare Lens"]
         };
-        navigate("/accessories",{state: {productData, productDetailObj:updatedProductDetailObj}})
-        
+        navigate("/accessories", { state: { productData, productDetailObj: updatedProductDetailObj } })
+
       }
     }
   };
@@ -121,122 +121,122 @@ const ProductDetails = () => {
       <div className="row-1">
         <div className="col-1">
           <div className="section">
-          <div className="heading">
-            <h2>Tell us a few things about your device!</h2>
-            <p>See what this means?</p>
-          </div>
-          <div>
-            <h3>Does the Camera switch on ?</h3>
-            <p>We currently only accept devices that switch on</p>
-            <label><input
-              type="radio"
-              name="cameraSwitchOn"
-              value="Yes"
-              onChange={handleChange}
-            />
-              Yes</label>
-            <label>
-              <input
+            <div className="heading">
+              <h2>Tell us a few things about your device!</h2>
+              <p>See what this means?</p>
+            </div>
+            <div>
+              <h3>Does the Camera switch on ?</h3>
+              <p>We also accept devices which do not work.</p>
+              <label><input
                 type="radio"
                 name="cameraSwitchOn"
-                value="No"
+                value="Yes"
                 onChange={handleChange}
               />
-              No
-            </label>
-            <h3>Are there any functional issues in your device ?</h3>
-            <p>Check your device's functional issues carefully</p>
-            <label>
-            <input
-              type="radio"
-              name="functionalIssue"
-              value="Yes"
-              onChange={handleChange}
-            />
-            Yes
-            </label>
-           <label>
-           <input
-              type="radio"
-              name="functionalIssue"
-              value="No"
-              onChange={handleChange}
-            />
-            No
+                Yes</label>
+              <label>
+                <input
+                  type="radio"
+                  name="cameraSwitchOn"
+                  value="No"
+                  onChange={handleChange}
+                />
+                No
+              </label>
+              <h3>Are there any functional issues in your device ?</h3>
+              <p>Check your device's functional issues carefully</p>
+              <label>
+                <input
+                  type="radio"
+                  name="functionalIssue"
+                  value="Yes"
+                  onChange={handleChange}
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="functionalIssue"
+                  value="No"
+                  onChange={handleChange}
+                />
+                No
 
-           </label>
-            <h3>Are there any defects on your device's body ?</h3>
-            <p>Check your device's body or buttons condition carefully</p>
-            <label>
-            <input
-              type="radio"
-              name="physicalCondition"
-              value="Yes"
-              onChange={handleChange}
-            />
-            Yes
-            </label>
-           <label>
-           <input
-              type="radio"
-              name="physicalCondition"
-              value="No"
-              onChange={handleChange}
-            />
-            No
-           </label>
+              </label>
+              <h3>Are there any defects on your device's body ?</h3>
+              <p>Check your device's body or buttons condition carefully</p>
+              <label>
+                <input
+                  type="radio"
+                  name="physicalCondition"
+                  value="Yes"
+                  onChange={handleChange}
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="physicalCondition"
+                  value="No"
+                  onChange={handleChange}
+                />
+                No
+              </label>
 
-            <h3>Do you have any additional lens ?</h3>
-            <p>Choose this option if you have additional lens of the same brand</p>
-            <label>
-           <input
-              type="radio"
-              name="additionalLens"
-              value="Yes"
-              onChange={handleChange}
-            />
-            Yes
-            </label>
-           <label>
-           <input
-              type="radio"
-              name="additionalLens"
-              value="No"
-              onChange={handleChange}
-            />
-            No
-            </label>
-            
-            <div className="submitButton"><Button className="contained" variant="contained" endIcon={<EastIcon />} onClick={handleClick}>Continue</Button></div>
-          </div>
-          <ToastContainer></ToastContainer>
+              <h3>Do you have any additional lens ?</h3>
+              <p>Choose this option if you have additional lens of the same brand</p>
+              <label>
+                <input
+                  type="radio"
+                  name="additionalLens"
+                  value="Yes"
+                  onChange={handleChange}
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="additionalLens"
+                  value="No"
+                  onChange={handleChange}
+                />
+                No
+              </label>
+
+              <div className="submitButton"><Button className="contained" variant="contained" endIcon={<EastIcon />} onClick={handleClick}>Continue</Button></div>
+            </div>
+            <ToastContainer></ToastContainer>
 
           </div>
         </div>
         <div className="col-2">
-        
-  {/* your content */}
+
+          {/* your content */}
 
 
           {productData.map((product) => (
 
             <div key={product._id} className="imgsection">
-            <img src={require(`../assets/img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
-             <div className="content-section" >
-             <h3>{product.brand}</h3>
-              <p>{product.product_model}</p>
-             </div>
+              <img src={require(`../assets/img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.product_model.toLowerCase()}.webp`)} alt="DSLR" />
+              <div className="content-section" >
+                <h3>{product.brand}</h3>
+                <p>{product.product_model}</p>
+              </div>
             </div>
 
           ))}
 
           <div className="camera-evalution">
 
-            <label><CameraAltIcon color="primary"/><span>Camera Evalution</span></label>
+            <label><CameraAltIcon color="primary" /><span>Camera Evalution</span></label>
             <SimpleBar forceVisible="y" autoHide={false}>
-            {productDetailObj.cameraSwitchOn && <div><h3>Does Camera Switch On ?</h3><li>{productDetailObj.cameraSwitchOn}</li></div>}
-            {productDetailObj.functionalIssue && <div><h3>Any Functional Issue ?</h3><li>{productDetailObj.functionalIssue}</li></div>}
-            {productDetailObj.physicalCondition && <div><h3>Any Physical Damage ?</h3><li>{productDetailObj.physicalCondition}</li></div>}
+              {productDetailObj.cameraSwitchOn && <div><h3>Does Camera Switch On ?</h3><li>{productDetailObj.cameraSwitchOn}</li></div>}
+              {productDetailObj.functionalIssue && <div><h3>Any Functional Issue ?</h3><li>{productDetailObj.functionalIssue}</li></div>}
+              {productDetailObj.physicalCondition && <div><h3>Any Physical Damage ?</h3><li>{productDetailObj.physicalCondition}</li></div>}
             </SimpleBar>
           </div>
 

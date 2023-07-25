@@ -20,15 +20,15 @@ const Footer = () => {
     };
   }, []);
   return (
-      <div className="footer">
+     <div className="footer-section">
+       <div className="footer">
         <div className="top">
           <div className="item">
             <h1>Categories</h1>
-            <span>Women</span>
-            <span>Men</span>
-            <span>Shoes</span>
-            <span>Accessories</span>
-            <span>New Arrivals</span>
+            <span>DSLR Camera</span>
+            <span>Action Camera</span>
+            <span>Video Camera</span>
+           
           </div>
           <div className="item">
             <h1>Links</h1>
@@ -98,6 +98,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+     </div>
   );
 };
 

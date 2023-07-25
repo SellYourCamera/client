@@ -46,10 +46,10 @@ const SingleProduct = () => {
           productData.map((product) => (
             <div onClick={() => handleModelClick(product.product_model)} className="item" style={{ boxShadow: '0px 1px 8px 1px rgba(0,0,0,0.08)' }}>
                <img key={`${product._id}-image`} src={require(`../assets/img/cameras/${product.category}/${product.brand.toLowerCase()}/${product.image.toLowerCase()}.webp`)} alt="DSLR " loading="lazy" />
-               <p key={`${product._id}-brand`}>{product.brand}</p>
+               {/* <p key={`${product._id}-brand`}>{product.brand}</p> */}
               <p key={`${product._id}-model`}>{product.product_model}</p>
-              <p>{product.category}</p>
-              <p>{product.image}</p>
+              {/* <p>{product.category}</p> */}
+              {/* <p>{product.image}</p> */}
             </div>
           ))}
       </div>

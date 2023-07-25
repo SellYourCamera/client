@@ -1,5 +1,10 @@
 @media only screen and (min-width:998px) {
 
+ .footer-section{
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  
   .footer {
     max-width: 1500px;
     background-color: #fafafa;
@@ -108,6 +113,7 @@
       }
     }
   }
+ }
 }
 
 @media only screen and (max-width: 997.9px) {

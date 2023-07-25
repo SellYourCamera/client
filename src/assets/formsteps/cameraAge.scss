@@ -1,11 +1,17 @@
 .container {
-  
-
     .row-1 {
         .col-1 {
+            .section{
+                .heading{
+                   
+                    h2{
+                        text-align: center;
+                    }
+                }
+            }
            .age-section{
             display: flex;
-        align-items: center; 
+            align-items: center; 
             .age-item{
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -32,6 +38,12 @@
 
         }
         .col-2{
+            .camera-evalution{
+                overflow-y: auto;
+                h3{
+                    text-align: start;
+                }
+            }
             
         }
 

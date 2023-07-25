@@ -3,6 +3,7 @@ import "./Dslr.scss";
 import React, {useState,useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Actioncamera from '../assets/videos/Action_camera.mp4'
 
 const ActionCamera = () => {
 
@@ -67,8 +68,12 @@ const ActionCamera = () => {
 
         <div className="col-right">
           <div className="imgcontainer">
-            <p>Sell your DSLR camera and, Action Camera <br />& Video Camera @ Best Price.</p>
-            <img src={Sellimg} alt="banner" />
+            {/* <p>Sell your DSLR camera and, Action Camera <br />& Video Camera @ Best Price.</p>
+            <img src={Sellimg} alt="banner" /> */}
+             <video autoPlay loop muted >
+           <source src={Actioncamera} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
           </div>
         </div>
       </div>
