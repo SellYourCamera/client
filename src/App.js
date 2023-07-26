@@ -25,6 +25,7 @@ import VideoCamera from "./pages/VideoCamera";
 import InstagramFeed from "./pages/Instagram";
 import { useState, useEffect } from 'react';
 import Preloader from "./pages/preloader";
+import GoogleReview from "./components/GoogleReview";
 
 
 
@@ -67,6 +68,7 @@ function App() {
         <Route path="/action-camera" element={<ActionCamera/>} />
         <Route path="/video-camera" element={<VideoCamera/>} />
         <Route path="/instagramfeed" element={<InstagramFeed />} />
+        <Route path="/GoogleReview" element={<GoogleReview/>}/>
         
 
       </Routes>

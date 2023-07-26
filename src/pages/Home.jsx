@@ -9,6 +9,7 @@ import Category from "./Category";
 import DSLRBrand from "./DslrBrand";
 // import VideoHero from "../components/hero/videohero";
 import WhyTrustUs from "./WhyTrustUs";
+import GoogleReview from "../components/GoogleReview";
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,6 +59,7 @@ return (
         <Category/>
         <DSLRBrand/>
         <WhyTrustUs isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        
         {showAlert && (
         <div className="top-alert show">
           <div className="alert-content">Thank You For Call Request. We will connect you soon.</div>
@@ -65,6 +67,7 @@ return (
       )}
 
         <FAQ/>
+        <GoogleReview/>
 
 
         
