@@ -10,6 +10,8 @@ import DSLRBrand from "./DslrBrand";
 // import VideoHero from "../components/hero/videohero";
 import WhyTrustUs from "./WhyTrustUs";
 import GoogleReview from "../components/GoogleReview";
+import { fromHalfFloat } from "three/src/extras/DataUtils";
+import ThreeDModel from "./3DModel";
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,6 +70,7 @@ return (
 
         <FAQ/>
         <GoogleReview/>
+        {/* <ThreeDModel /> */}
 
 
         

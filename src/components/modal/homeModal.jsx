@@ -41,21 +41,24 @@ const Modal = ({ setIsModalOpen }) => {
     const [phone, setPhone] = useState('');
     const [brand, setBrand] = useState('');
 
-    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState();
     const [emailSendStatus, setEmailSendStatus] = useState(0);
     const [apiResponseStatus, setApiResponseStatus] = useState(0);
     const [emailMsg, setEmailMsg] = useState('');
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowAlert(false);
-        }, 3000);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setShowAlert(false);
+    //     }, 3000);
 
-        return () => {
-            clearTimeout(timer);
-        };
-    }, [showAlert, apiResponseStatus, emailSendStatus, emailMsg]);
+    //     return () => {
+    //         clearTimeout(timer);
+    //     };
+    // }, [showAlert, apiResponseStatus, emailSendStatus, emailMsg]);
 
+
+
+//event Trigger to get data
     const handleRequestCall = async (event) => {
         event.preventDefault();
 
@@ -66,9 +69,10 @@ const Modal = ({ setIsModalOpen }) => {
             brand: brand
         };
 
+        //added data to database using api
         try {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
-            if (apiResponse.status === 200) {
+            if (apiResponse.status == 200) {
                 setApiResponseStatus(200);
                 const emailSend = await emailjs.send('service_xh3dsun', 'template_9w4llwc', {
                     user_name: username,
@@ -83,33 +87,33 @@ const Modal = ({ setIsModalOpen }) => {
                         console.log('Failed to send email', error);
                     });
 
-                console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus,emailSend);
-                setEmailMsg('Thank You For Call Request. We will connect you soon.');
+                // console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus,emailSend);
+             //   setEmailMsg('Thank You For Call Request. We will connect you soon.');
             }
-            if (emailSendStatus === 200 && apiResponseStatus === 200) {
-                setShowAlert(true);
-                const timer = setTimeout(() => {
-                    setShowAlert(false);
-                }, 3000);
+            // if (emailSendStatus == 200 && apiResponseStatus == 200) {
+            //     // setShowAlert(true);
+            //     const timer = setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000);
 
-                return () => {
-                    clearTimeout(timer);
-                };
-            } else {
-                setEmailMsg('Form was not submitted. Something went wrong.');
-                setShowAlert(true);
-                const timer = setTimeout(() => {
-                    setShowAlert(false);
-                }, 3000);
+            //     return () => {
+            //         clearTimeout(timer);
+            //     };
+            // } else {
+            //     setEmailMsg('Form was not submitted. Something went wrong.');
+            //     setShowAlert(true);
+            //     const timer = setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000);
 
-                const timer1 = setTimeout(() => {
-                    setIsModalOpen(false);
-                }, 3000);
+            //     const timer1 = setTimeout(() => {
+            //         setIsModalOpen(false);
+            //     }, 3000);
 
-                return () => {
-                    clearTimeout(timer, timer1);
-                };
-            }
+            //     return () => {
+            //         clearTimeout(timer, timer1);
+            //     };
+            // }
 
 
         } catch (error) {
@@ -117,6 +121,34 @@ const Modal = ({ setIsModalOpen }) => {
         }
     };
 
+    
+    useEffect(() => {
+        if (emailSendStatus === 200 && apiResponseStatus === 200) {
+          // Email sent successfully and data added to the database
+          setEmailMsg('Thank You For Call Request. We will connect with you soon.');
+          setShowAlert(true);
+          const timer = setTimeout(() => {
+            setShowAlert(false);
+            setIsModalOpen(false); // Close the modal after hiding the alert (optional)
+          }, 3000);
+          
+        } else {
+          // Form was not submitted or something went wrong
+          setEmailMsg('Form was not submitted. Something went wrong.');
+          setShowAlert(true);
+
+        }
+    
+        console.log("email Msg",emailMsg)
+        // Show the alert
+        
+    
+        // Hide the alert after 3 seconds
+     
+    
+        // Clear the timer when the component unmounts (cleanup)
+        // return () => clearTimeout(timer);
+      }, [emailSendStatus, apiResponseStatus, setIsModalOpen,emailMsg]);
     //popup modal
     const handlemodalclose = () => {
         setIsModalOpen(false);
@@ -129,7 +161,7 @@ const Modal = ({ setIsModalOpen }) => {
     console.log('emailsendstatus', emailSendStatus, 'apiResponseStatus', apiResponseStatus);
     return (
         <div className="home-modal-box">
-            {showAlert && (
+            {(showAlert)  && (
                 <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor: emailSendStatus === 200 ? successColor : errorColor }}>
                     <div className="alert-content">
                         {emailMsg}

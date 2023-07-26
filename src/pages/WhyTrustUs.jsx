@@ -13,7 +13,7 @@ const WhyTrustUs = ({ isModalOpen, setIsModalOpen }) => {
                 <img src={require("../assets/img/handshake.png")} alt='sellyourcamera'/>
             </div>
             <div className='col-1'>
-                <div className='heading'> <h2>At SYC, we have built a strong reputation as a trusted platform for buying and selling cameras.</h2></div>
+                <div className='heading'> <h2 style={{color:"#f1f1f1"}}>At SYC, we have built a strong reputation as a trusted platform for buying and selling cameras.</h2></div>
                 <div className='content'> <p>We have implemented a verification process for both buyers and sellers on our platform. This ensures that you are connecting with genuine individuals
                      who are genuinely interested in buying or selling cameras.
                       By verifying user accounts, we minimize the risk of fraudulent activity and provide a 
