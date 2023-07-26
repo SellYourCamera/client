@@ -11,7 +11,7 @@ import DSLRBrand from "./DslrBrand";
 import WhyTrustUs from "./WhyTrustUs";
 import GoogleReview from "../components/GoogleReview";
 import { fromHalfFloat } from "three/src/extras/DataUtils";
-import ThreeDModel from "./3DModel";
+// import ThreeDModel from "./3DModel";
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
