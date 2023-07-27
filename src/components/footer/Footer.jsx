@@ -28,14 +28,14 @@ const Footer = () => {
             <span>DSLR Camera</span>
             <span>Action Camera</span>
             <span>Video Camera</span>
-           
+            
           </div>
           <div className="item">
             <h1>Links</h1>
             <span>FAQ</span>
             <span>Pages</span>
             <span>Stores</span>
-            <span>Compare</span>
+            <span>Reviews</span>
             <span>Cookies</span>
           </div>
 

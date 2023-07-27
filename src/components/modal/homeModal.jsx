@@ -42,9 +42,10 @@ const Modal = ({ setIsModalOpen }) => {
     const [brand, setBrand] = useState('');
 
     const [showAlert, setShowAlert] = useState();
-    const [emailSendStatus, setEmailSendStatus] = useState(0);
-    const [apiResponseStatus, setApiResponseStatus] = useState(0);
-    const [emailMsg, setEmailMsg] = useState('');
+    const [emailSendStatus, setEmailSendStatus] = useState();
+    const [apiResponseStatus, setApiResponseStatus] = useState();
+    const [emailMsg, setEmailMsg] = useState('Form was not submitted. Something went wrong.');
+    var timer;
 
     // useEffect(() => {
     //     const timer = setTimeout(() => {
@@ -58,7 +59,7 @@ const Modal = ({ setIsModalOpen }) => {
 
 
 
-//event Trigger to get data
+    //event Trigger to get data
     const handleRequestCall = async (event) => {
         event.preventDefault();
 
@@ -82,38 +83,14 @@ const Modal = ({ setIsModalOpen }) => {
                 }, 'Xr7TiVGL2mxbnjbe7')
                     .then((result) => {
                         console.log('Email sent successfully', result.text);
+                        setEmailMsg('Thank You For Call Request. We will connect with you soon.');
                         setEmailSendStatus(200);
                     }, (error) => {
                         console.log('Failed to send email', error);
+                        setEmailSendStatus(0);
                     });
 
-                // console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus,emailSend);
-             //   setEmailMsg('Thank You For Call Request. We will connect you soon.');
             }
-            // if (emailSendStatus == 200 && apiResponseStatus == 200) {
-            //     // setShowAlert(true);
-            //     const timer = setTimeout(() => {
-            //         setShowAlert(false);
-            //     }, 3000);
-
-            //     return () => {
-            //         clearTimeout(timer);
-            //     };
-            // } else {
-            //     setEmailMsg('Form was not submitted. Something went wrong.');
-            //     setShowAlert(true);
-            //     const timer = setTimeout(() => {
-            //         setShowAlert(false);
-            //     }, 3000);
-
-            //     const timer1 = setTimeout(() => {
-            //         setIsModalOpen(false);
-            //     }, 3000);
-
-            //     return () => {
-            //         clearTimeout(timer, timer1);
-            //     };
-            // }
 
 
         } catch (error) {
@@ -121,35 +98,39 @@ const Modal = ({ setIsModalOpen }) => {
         }
     };
 
-    
+
     useEffect(() => {
         if (emailSendStatus === 200 && apiResponseStatus === 200) {
-          // Email sent successfully and data added to the database
-          setEmailMsg('Thank You For Call Request. We will connect with you soon.');
-          setShowAlert(true);
-          const timer = setTimeout(() => {
-            setShowAlert(false);
-            setIsModalOpen(false); // Close the modal after hiding the alert (optional)
-          }, 3000);
-          
+            // Email sent successfully and data added to the database
+            // setEmailMsg('Thank You For Call Request. We will connect with you soon.');
+            setShowAlert(true);
+            timer = setTimeout(() => {
+                setShowAlert(false);
+                setIsModalOpen(false); // Close the modal after hiding the alert (optional)
+            }, 3000);
+
         } else {
-          // Form was not submitted or something went wrong
-          setEmailMsg('Form was not submitted. Something went wrong.');
-          setShowAlert(true);
+            // Form was not submitted or something went wrong
+            if(emailSendStatus===0 && apiResponseStatus ===0){
+            setShowAlert(true);
+             timer = setTimeout(() => {
+                setShowAlert(false);
+                setIsModalOpen(false); // Close the modal after hiding the alert (optional)
+            }, 3000);
+        }
+        else{
+            setIsModalOpen(true);
+        }
 
         }
-    
-        console.log("email Msg",emailMsg)
-        // Show the alert
-        
-    
-        // Hide the alert after 3 seconds
-     
-    
-        // Clear the timer when the component unmounts (cleanup)
-        // return () => clearTimeout(timer);
-      }, [emailSendStatus, apiResponseStatus, setIsModalOpen,emailMsg]);
-    //popup modal
+
+        console.log("email Msg", emailMsg)
+
+         return () => clearTimeout(timer);
+    }, [emailSendStatus, setIsModalOpen,apiResponseStatus]);
+
+
+    //close modal
     const handlemodalclose = () => {
         setIsModalOpen(false);
     }
@@ -161,7 +142,7 @@ const Modal = ({ setIsModalOpen }) => {
     console.log('emailsendstatus', emailSendStatus, 'apiResponseStatus', apiResponseStatus);
     return (
         <div className="home-modal-box">
-            {(showAlert)  && (
+            {(showAlert && emailMsg) && (
                 <div className={`top-alert ${showAlert ? 'fade-in' : 'fade-out'}`} style={{ backgroundColor: emailSendStatus === 200 ? successColor : errorColor }}>
                     <div className="alert-content">
                         {emailMsg}
@@ -282,7 +263,7 @@ const Modal = ({ setIsModalOpen }) => {
                                         type="submit"
                                         fullWidth
                                         variant="contained"
-                                        sx={{ mt: 3, mb: 2,boxShadow:'none',borderRadius:0 }}
+                                        sx={{ mt: 3, mb: 2, boxShadow: 'none', borderRadius: 0 }}
                                     >
                                         Request Call
                                     </Button>
@@ -304,7 +285,7 @@ const Modal = ({ setIsModalOpen }) => {
                                         fullWidth
                                         variant="contained"
                                         onClick={handleMakeCall}
-                                        sx={{ mt: 1, mb: 2,boxShadow:'none',borderRadius:0 }}
+                                        sx={{ mt: 1, mb: 2, boxShadow: 'none', borderRadius: 0 }}
                                     >
                                         Make Call
                                     </Button>
@@ -325,3 +306,35 @@ const Modal = ({ setIsModalOpen }) => {
 };
 
 export default Modal;
+
+
+
+
+
+            // console.log('apiResponse, apiResponse.status', apiResponse, apiResponse.status, apiResponseStatus,emailSend);
+             //   setEmailMsg('Thank You For Call Request. We will connect you soon.');
+                //}
+            // if (emailSendStatus == 200 && apiResponseStatus == 200) {
+            //     // setShowAlert(true);
+            //     const timer = setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000);
+
+            //     return () => {
+            //         clearTimeout(timer);
+            //     };
+            // } else {
+            //     setEmailMsg('Form was not submitted. Something went wrong.');
+            //     setShowAlert(true);
+            //     const timer = setTimeout(() => {
+            //         setShowAlert(false);
+            //     }, 3000);
+
+            //     const timer1 = setTimeout(() => {
+            //         setIsModalOpen(false);
+            //     }, 3000);
+
+            //     return () => {
+            //         clearTimeout(timer, timer1);
+            //     };
+            // }
