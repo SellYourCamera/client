@@ -75,12 +75,12 @@ const Modal = ({ setIsModalOpen }) => {
             var apiResponse = await axios.post(`${process.env.REACT_APP_Backend_URL}/api/userCallRequest`, userDataToSend);
             if (apiResponse.status == 200) {
                 setApiResponseStatus(200);
-                const emailSend = await emailjs.send('service_xh3dsun', 'template_9w4llwc', {
+                const emailSend = await emailjs.send('service_ngdcyav', 'template_1aelszg', {
                     user_name: username,
                     user_email: email,
                     phone: phone,
                     brand: brand
-                }, 'Xr7TiVGL2mxbnjbe7')
+                }, 'hy36fsY8bXE28K2DQ')
                     .then((result) => {
                         console.log('Email sent successfully', result.text);
                         setEmailMsg('Thank You For Call Request. We will connect with you soon.');
