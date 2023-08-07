@@ -1,7 +1,5 @@
-import Sellimg from "../assets/img/Sellimg.jpg";
 import "./Dslr.scss";
-import React, {useState,useEffect} from "react";
-import axios from "axios";
+import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import Videocameravideo  from "../assets/videos/Video_camera.mp4";
 

@@ -59,7 +59,7 @@ const handleModelClick = (product) => {
               <div className="col-2">
                 <h2>{product.brand} DSLR {product.product_model}</h2>
                 <h4>Get Upto</h4>
-                <h1>{<CurrencyRupeeIcon/>} {product.price}</h1>
+                <h1 style={{color:'#1876d2'}}>{<CurrencyRupeeIcon/>}{product.price}</h1>
                 <Button onClick={()=>handleModelClick(productData)} className="contained" variant="contained" endIcon={<EastIcon />}>Get Exact Value </Button>
 
               </div>

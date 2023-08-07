@@ -99,7 +99,7 @@ const ProductDetails = () => {
 
       } else if (productDetailObj.additionalLens === "Yes") {
         const productDataForLens = productData;
-        navigate('/lens', { state: { productData: productDataForLens, productDetailObj: productDetailObj } });
+        navigate('/accessories', { state: { productData: productDataForLens, productDetailObj: productDetailObj } });
         console.log(productData);
       } else if (productDetailObj.cameraLens.length < 1) {
         const productDataForLens = productData;

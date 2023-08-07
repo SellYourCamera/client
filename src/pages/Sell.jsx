@@ -4,7 +4,6 @@ import DSLR from "../assets/icons/DSLR.svg";
 import ActionCamera from "../assets/icons/Action Camera.svg";
 import VideoCamera from "../assets/icons/Video Camera.svg";
 import { Link } from 'react-router-dom';
-import SellDSLR from "./DSLR";
 
 const Sell = () => {
     return (

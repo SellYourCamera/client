@@ -1,4 +1,3 @@
-import Sellimg from "../assets/img/Sellimg.jpg";
 import "./Dslr.scss";
 import React, {useState,useEffect} from "react";
 import axios from "axios";
@@ -19,10 +18,10 @@ const DSLR = () => {
     navigate('/single-product', { state: { brandName: name,category: category } });
   };
 
-  useEffect(()=>{
-     var data= axios.get(`${process.env.REACT_APP_Backend_URL}/api/search/${searchKey}`);
-      console.log(searchKey,data)
-  },[searchKey]);
+  // useEffect(()=>{
+  //    var data= axios.get(`${process.env.REACT_APP_Backend_URL}/api/search/${searchKey}`);
+  //     console.log(searchKey,data)
+  // },[searchKey]);
 
   const handleInputChange = (event) => {
     setSearchKey(event.target.value);
