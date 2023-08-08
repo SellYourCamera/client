@@ -136,6 +136,11 @@ export default function LoginModal(isModalOpen, closeModal, productData) {
         });
     }
 
+    const handleSubmit =(e) => {
+        e.preventDefault();
+        toast.success("Thankyou to join Us.")
+    }
+
     return (
         <div>
 
@@ -295,9 +300,7 @@ export default function LoginModal(isModalOpen, closeModal, productData) {
                             </Box>
                         )
                     ) : (
-                        <h2>
-                            User Logged in successfully
-                        </h2>
+                       handleSubmit()
 
                     )}
                     </div>

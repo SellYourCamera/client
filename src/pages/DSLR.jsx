@@ -5,28 +5,40 @@ import { useNavigate } from 'react-router-dom';
 import DSLRVideo from "../assets/videos/DSLRVideo.mp4"
 
 const DSLR = () => {
-
+ 
+  const [searchResults, setSearchResults] = useState([]); 
+  const [dataLength,setDataLength]=useState(0);
   const navigate = useNavigate();
   const serachData='';
   const filterData='';
   const [searchKey,setSearchKey]=useState('');
   const category='DSLR Camera';
-  console.log('categiory',category);
   const [brandName, setBrandName] = useState("");
   const handleBrandClick = (name) => {
     setBrandName(name);
     navigate('/single-product', { state: { brandName: name,category: category } });
   };
 
-  // useEffect(()=>{
-  //    var data= axios.get(`${process.env.REACT_APP_Backend_URL}/api/search/${searchKey}`);
-  //     console.log(searchKey,data)
-  // },[searchKey]);
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://api.sellyourcamera.in/api/search/${searchKey}`);
+        console.log("API Response:", response.data,"datalength",dataLength); // Log the entire API response
+        setSearchResults(response.data);
+        setDataLength(searchResults.data.length); // Assuming the API response has a "results" property
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, [searchKey]);
   const handleInputChange = (event) => {
     setSearchKey(event.target.value);
   };
-  
+
+
+
 
 
   return (
@@ -38,11 +50,19 @@ const DSLR = () => {
             <form><input type="text" value={searchKey}
         placeholder="Search Brand"
         onChange={handleInputChange} /></form>
-            {/* <div className="search-result">
-              <div>A</div>
-              <div>B</div>
-              <div>C</div>
-            </div> */}
+            <div className="search-result">
+            {dataLength > 0 ? (
+    searchResults.data.map((product) => (
+      <div
+      onClick={() => handleBrandClick(product.brand)}
+      key={product.id}
+      className="capitalized-div"
+    >{product.brand.toLowerCase()}&nbsp;{product.product_model}</div>
+    ))
+  ) : (
+    <p></p>
+  )}
+            </div>
             <h4 className="category"> or Choose Gadget Brand</h4>
             {brandName}
             <ul>

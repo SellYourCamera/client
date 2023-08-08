@@ -84,11 +84,42 @@
   .brandcontainer {
  
     .search-result{
-      height: 200px;
-      width: auto;
-      background-color: #f1f1f1;
+      margin-top: 15px;
+      height: 100px;
+      position: relative;
+      width: 75%;
+      background-color: rgba(255,255,255,0.1);
       color: #000;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: #1876d2;
       
+    }
+
+    /* Webkit browsers (like Chrome, Safari) */
+.search-result::-webkit-scrollbar {
+  width:6px;
+}
+
+.search-result::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.search-result::-webkit-scrollbar-thumb {
+  background-color: #1876d2;
+}
+    .capitalized-div {
+      text-transform: capitalize;
+      background-color: #fafafa;
+      margin: 3px;
+      padding: 7px;
+      transition: background-color 0.3s; /* Smooth transition effect */
+    }
+    
+    .capitalized-div:hover {
+      background-color: #1876d2;
+      color: #fafafa;
+      cursor:pointer;
     }
 
     h4 {
