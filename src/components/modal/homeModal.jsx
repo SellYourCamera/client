@@ -233,12 +233,12 @@ const Modal = ({ setIsModalOpen }) => {
 
                                             <Box sx={{ minWidth: 120 }}>
                                                 <FormControl fullWidth>
-                                                    <InputLabel id="demo-simple-select-label">Camera</InputLabel>
+                                                    <InputLabel id="demo-simple-select-label">Select which camera you want to sell?</InputLabel>
                                                     <Select
                                                         labelId="demo-simple-select-label"
                                                         id="demo-simple-select"
                                                         value={brand}
-                                                        label="Camera"
+                                                        label="Select which camera you want to sale"
                                                         onChange={(event) => setBrand(event.target.value)}
                                                     >
                                                         <MenuItem value='Canon'>Canon</MenuItem>
