@@ -37,7 +37,7 @@ const Contact = () => {
                         <div className="content1">
                             <h1><EmailOutlinedIcon sx={{ scale: '3', color: '#1876d2' }} /></h1>
                             <h2>Mail Us</h2>
-                            <a href="mailto:vg9557755504@gmail.com">vg9557755504@gmail.com</a>
+                            <a href="mailto:vg9557755504@gmail.com">Info.sellyourcamera@gmail.com</a>
                         </div>
                     </div>
                     <div className="col1">
